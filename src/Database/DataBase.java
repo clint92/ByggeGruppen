@@ -1,8 +1,11 @@
 package Database;
 
+import java.sql.ResultSet;
+
 /**
  * Created by Jennes on 25-11-2016.
  */
 public interface Database {
-    void getUserData();
+    ResultSet getUserData();
+    void closeConnection();
 }
