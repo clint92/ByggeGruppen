@@ -12,6 +12,7 @@ public class Controller {
 
     public TextField user;
     public PasswordField pass;
+
     MyBLMain BL = new MyBLMain();
     public void userLogin() throws LoginException {
         switch (BL.valiedate(user.getText(), pass.getText())) {

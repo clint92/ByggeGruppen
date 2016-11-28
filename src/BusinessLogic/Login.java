@@ -12,12 +12,11 @@ import java.sql.SQLException;
 public class Login {
     Database db = new MyDatabase();
     public int handleLogin(String user, String pass) {
-        int level;
         try {
             ResultSet data = db.getUserData();
             while (data.next()) {
                 if (data.getString("userName").equals(user) && data.getString("password").equals(pass)) {
-                    level = data.getInt("level");
+                    int level = data.getInt("level");
                     db.closeConnection();
                     return level;
                 }
