@@ -1,7 +1,6 @@
 package Controller;
 
-import BusinessLogic.LoginException;
-import BusinessLogic.MyBLMain;
+import BusinessLogic.*;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,7 +13,6 @@ public class Controller {
     public TextField user;
     public PasswordField pass;
     MyBLMain BL = new MyBLMain();
-
     public void userLogin() throws LoginException {
         switch (BL.valiedate(user.getText(), pass.getText())) {
             case -1:

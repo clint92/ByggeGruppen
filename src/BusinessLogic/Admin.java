@@ -4,14 +4,13 @@ package BusinessLogic;
  * Created by Jennes on 25-11-2016.
  */
 public class Admin extends User {
+    private int userid = 1;
 
-    @Override
-    public void addToTimeline() {
-        super.addToTimeline();
+    public void setUserid(int id){
+        this.userid = id;
     }
 
-    @Override
-    public void changeContent() {
-        super.changeContent();
+    public int getUserid(){
+        return this.userid;
     }
 }
