@@ -24,6 +24,11 @@ public class MyDatabase implements Database {
         }
         return data;
     }
+
+
+    public void editDataLogin(String pass){
+
+    }
     public void closeConnection() {
         try {
             connection.close();
