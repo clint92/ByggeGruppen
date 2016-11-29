@@ -1,4 +1,4 @@
-package BusinessLogic;
+package Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,24 +7,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 
 import java.net.URL;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 /**
- * Created by Jennes on 25-11-2016.
+ * Created by clint on 29-11-2016.
  */
-
-public class Admin extends User implements Initializable {
-    private int userid = 1;
-
-    public void setUserid(int id){
-        this.userid = id;
-    }
-
-    public int getUserid(){
-        return this.userid;
-    }
-
+public class AdminController implements Initializable {
 
     @FXML
     public ComboBox<String> userType;
@@ -32,6 +20,6 @@ public class Admin extends User implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    userType.setItems(types);
+        userType.setItems(types);
     }
 }

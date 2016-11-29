@@ -22,7 +22,7 @@
                <children>
                   <TextField fx:id="pass1" layoutX="192.0" layoutY="110.0" prefWidth="149.0" />
                   <TextField fx:id="pass2" layoutX="192.0" layoutY="173.0" />
-                  <Button layoutX="250.0" layoutY="262.0" mnemonicParsing="false" onAction="#changeLogin" text="OK" />
+                  <Button layoutX="250.0" layoutY="262.0" mnemonicParsing="false" text="OK" />
                   <Text layoutX="214.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type new password" />
                </children>
             </AnchorPane>
