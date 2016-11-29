@@ -1,15 +1,19 @@
 package BusinessLogic;
 
-import javafx.scene.control.Alert;
+import Database.MyDatabase;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 /**
  * Created by Jennes on 25-11-2016.
  */
 public class User {
+    MyDatabase db = new MyDatabase();
     private String username;
     public TextField pass1;
     public TextField pass2;
+    Security sc = new Security();
+
     public void addToTimeline(){
 
     }
@@ -22,21 +26,19 @@ public class User {
 
     }
 
-    public void changeLogin(){
-
-        if(pass1.getText().equals(pass2.getText())){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information");
-            alert.setHeaderText("Succes!");
-            alert.setContentText("Dit password er nu ændret");
-            alert.showAndWait();
-            // metode fra database der ændrer til den nye kode ex. editDataLogin(String pass1);
-            pass1.setText("");
-            pass2.setText("");
+    public void changeLogin(String userN, String pass1, String pass2){
+        if(pass1.equals(pass2)){
+           db.editDataLogin(userN, sc.hashpw(pass1));
         }
         else{
             System.out.println("Koderne er ikke ens!");
         }
     }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public String getUsername() {
+        return username;
+    }
 }

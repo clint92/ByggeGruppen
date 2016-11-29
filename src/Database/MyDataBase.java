@@ -25,8 +25,16 @@ public class MyDatabase implements Database {
         return data;
     }
 
+    public void editDataLogin(String userN, String pass){
 
-    public void editDataLogin(String pass){
+        try {
+            connection = DriverManager.getConnection(url + dbName, usern, passw);
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("UPDATE Users SET password='" + pass + "' WHERE userName='" + userN + "';");
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
 
     }
     public void closeConnection() {
