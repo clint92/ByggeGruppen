@@ -8,40 +8,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<<<<<<< HEAD
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="Controller.Controller">
-=======
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.User">
->>>>>>> 1d9795a7d18070e6df338d776393ecc36f2c2e04
-  <tabs>
-    <Tab text="Projects">
-         <content>
-            <AnchorPane>
-               <children>
-                  <ScrollPane hbarPolicy="ALWAYS" prefHeight="371.0" prefWidth="600.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="76.0" text="project" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
-         </content></Tab>
-    <Tab text="change login">
-         <content>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-<<<<<<< HEAD
-                  <TextField fx:id="pass1" layoutX="192.0" layoutY="84.0" />
-                  <TextField fx:id="pass2" layoutX="192.0" layoutY="173.0" />
-                  <Button layoutX="250.0" layoutY="262.0" mnemonicParsing="false" onAction="#fucktheworld" text="OK" />
-=======
-                  <TextField fx:id="pass1" layoutX="192.0" layoutY="105.0" prefHeight="4.0" prefWidth="149.0" text="Password" />
-                  <TextField fx:id="pass2" layoutX="192.0" layoutY="173.0" text="Verify password" />
-                  <Button layoutX="250.0" layoutY="262.0" mnemonicParsing="false" onAction="#changeLogin" text="OK" />
-                  <Text layoutX="213.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type new password" wrappingWidth="107.03125" />
->>>>>>> 1d9795a7d18070e6df338d776393ecc36f2c2e04
-               </children>
-            </AnchorPane>
-         </content></Tab>
-  </tabs>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ContractorController">
+    <tabs>
+        <Tab text="Projects">
+            <content>
+                <ScrollPane hbarPolicy="ALWAYS" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" />
+            </content>
+        </Tab>
+        <Tab text="change login">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <TextField fx:id="pass1" layoutX="192.0" layoutY="108.0" />
+                        <TextField fx:id="pass2" layoutX="192.0" layoutY="173.0" />
+                        <Button layoutX="250.0" layoutY="262.0" mnemonicParsing="false" onAction="#userChangeLogin" text="OK" />
+                        <Text layoutX="214.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type new password" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
 </TabPane>

@@ -6,9 +6,6 @@ import Database.MyDatabase;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by Jennes on 25-11-2016.
- */
 public class Login {
     Database db = new MyDatabase();
     public int handleLogin(String user, String pass) {

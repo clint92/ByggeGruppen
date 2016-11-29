@@ -1,44 +1,48 @@
 package BusinessLogic;
 
 import Database.MyDatabase;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
+import javafx.scene.control.Alert;
 
-/**
- * Created by Jennes on 25-11-2016.
- */
 public class User {
     MyDatabase db = new MyDatabase();
-    private String username;
-    public TextField pass1;
-    public TextField pass2;
     Security sc = new Security();
+    private static String username;
 
-    public void addToTimeline(){
-
-    }
-
-    public void changeContent(){
+    public void addToTimeline() {
 
     }
 
-    public void deleteContent(){
+    public void changeContent() {
 
     }
 
-    public void changeLogin(String userN, String pass1, String pass2){
-        if(pass1.equals(pass2)){
-           db.editDataLogin(userN, sc.hashpw(pass1));
+    public void deleteContent() {
+
+    }
+
+    public void changeLogin(String userN, String pass1, String pass2) {
+
+        if (pass1.equals(pass2)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("System message");
+            alert.setHeaderText("Succes!");
+            alert.setContentText("Password changed");
+            alert.showAndWait();
+            db.editDataLogin(userN, sc.hashpw(pass1));
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("System message");
+            alert.setHeaderText("Failed!");
+            alert.setContentText("Password not changed!\nThe 2 passwords are not equal!");
+            alert.showAndWait();
         }
-        else{
-            System.out.println("Koderne er ikke ens!");
-        }
-    }
-    public void setUsername(String username) {
-        this.username = username;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
+    }
+
+    public static void setUsername(String username) {
+        User.username = username;
     }
 }

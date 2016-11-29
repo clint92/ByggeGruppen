@@ -9,10 +9,7 @@ import javafx.scene.control.ComboBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by clint on 29-11-2016.
- */
-public class AdminController implements Initializable {
+public class AdminController extends Controller implements Initializable {
 
     @FXML
     public ComboBox<String> userType;

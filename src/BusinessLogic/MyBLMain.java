@@ -5,9 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * Created by Jennes on 25-11-2016.
- */
 public class MyBLMain {
 
     Security sc = new Security();

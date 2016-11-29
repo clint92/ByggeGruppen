@@ -1,8 +1,5 @@
 package BusinessLogic;
 
-/**
- * Created by Jennes on 25-11-2016.
- */
 public class Security implements SecutiryInterface {
     @Override
     public String hashpw(String pass) {

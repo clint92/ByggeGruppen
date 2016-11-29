@@ -2,9 +2,6 @@ package Database;
 
 import java.sql.*;
 
-/**
- * Created by Jennes on 25-11-2016.
- */
 public class MyDatabase implements Database {
     String url = "jdbc:mysql://sql7.freemysqlhosting.net:3306/";
     String dbName = "sql7146768";
@@ -26,7 +23,6 @@ public class MyDatabase implements Database {
     }
 
     public void editDataLogin(String userN, String pass){
-
         try {
             connection = DriverManager.getConnection(url + dbName, usern, passw);
             Statement statement = connection.createStatement();
