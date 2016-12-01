@@ -9,9 +9,8 @@ public class MyBLMain {
 
     Security sc = new Security();
 
-    public int valiedate(String user, String pass){
-        Login l = new Login();
-        return l.handleLogin(user, sc.hashpw(pass));
+    public int validate(String user, String pass){
+        return Login.handleLogin(user, sc.hashpw(pass));
     }
 
     public void setScene(Stage oStage, String path) {

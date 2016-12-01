@@ -2,6 +2,7 @@ package Controller;
 
 import BusinessLogic.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -21,18 +22,18 @@ public class Controller {
 
     public void userLogin() {
         u.setUsername(user.getText());
-        switch (BL.valiedate(user.getText(), pass.getText())) {
+        switch (BL.validate(user.getText(), pass.getText())) {
             case -1:
-                System.out.println("FORKERT KODE");
+                InfoBox.info("Wrong Password!");
                 break;
             case 0:
                 BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
                 break;
             case 1:
-                BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
+                BL.setScene((Stage) user.getScene().getWindow(), "../contractor.fxml");
                 break;
             case 2:
-                BL.setScene((Stage) user.getScene().getWindow(), "../User.fxml");
+                BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
                 break;
         }
     }

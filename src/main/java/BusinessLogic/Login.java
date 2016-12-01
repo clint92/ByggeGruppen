@@ -1,20 +1,18 @@
 package BusinessLogic;
 
-import Database.Database;
 import Database.MyDatabase;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Login {
-    Database db = new MyDatabase();
-    public int handleLogin(String user, String pass) {
+
+    public static int handleLogin(String user, String pass) {
         try {
-            ResultSet data = db.getUserData();
+            ResultSet data = MyDatabase.getDbCon().query("SELECT * FROM Users");
             while (data.next()) {
                 if (data.getString("userName").equals(user) && data.getString("password").equals(pass)) {
                     int level = data.getInt("level");
-                    db.closeConnection();
                     return level;
                 }
             }

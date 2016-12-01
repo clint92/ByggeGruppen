@@ -3,7 +3,7 @@ package Database;
 import java.sql.ResultSet;
 
 public interface Database {
-    ResultSet getUserData();
-    void closeConnection();
-    void editDataLogin(String userN, String pass);
+    ResultSet query(String query);
+    void updateDB(String query);
+    //void editDataLogin(String userN, String pass);
 }

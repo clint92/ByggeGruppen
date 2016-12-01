@@ -4,7 +4,6 @@ import Database.MyDatabase;
 import javafx.scene.control.Alert;
 
 public class User {
-    MyDatabase db = new MyDatabase();
     Security sc = new Security();
     private static String username;
 
@@ -21,14 +20,13 @@ public class User {
     }
 
     public void changeLogin(String userN, String pass1, String pass2) {
-
         if (pass1.equals(pass2)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("System message");
             alert.setHeaderText("Succes!");
             alert.setContentText("Password changed");
             alert.showAndWait();
-            db.editDataLogin(userN, sc.hashpw(pass1));
+            MyDatabase.getDbCon().updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("System message");
