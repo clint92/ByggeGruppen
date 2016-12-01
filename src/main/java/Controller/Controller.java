@@ -29,7 +29,7 @@ public class Controller {
                 BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
                 break;
             case 1:
-                BL.setScene((Stage) user.getScene().getWindow(), "../contractor.fxml");
+                BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
                 break;
             case 2:
                 BL.setScene((Stage) user.getScene().getWindow(), "../User.fxml");
