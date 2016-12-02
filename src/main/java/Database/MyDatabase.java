@@ -20,7 +20,7 @@ public class MyDatabase implements Database {
         }
     }
 
-    public static synchronized MyDatabase getDbCon() {
+    public static synchronized MyDatabase dbInstance() {
         if (databaseCon == null) {
             databaseCon = new MyDatabase();
         }
