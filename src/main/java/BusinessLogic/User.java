@@ -26,7 +26,7 @@ public class User {
             alert.setHeaderText("Succes!");
             alert.setContentText("Password changed");
             alert.showAndWait();
-            MyDatabase.getDbCon().updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
+            MyDatabase.dbInstance().updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("System message");

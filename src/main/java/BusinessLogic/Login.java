@@ -9,7 +9,7 @@ public class Login {
 
     public static int handleLogin(String user, String pass) {
         try {
-            ResultSet data = MyDatabase.getDbCon().query("SELECT * FROM Users");
+            ResultSet data = MyDatabase.dbInstance().query("SELECT * FROM Users");
             while (data.next()) {
                 if (data.getString("userName").equals(user) && data.getString("password").equals(pass)) {
                     int level = data.getInt("level");
