@@ -1,6 +1,8 @@
 package BusinessLogic;
 
 
+import Database.MyDatabase;
+
 public class Admin extends User {
     private int userid = 1;
 
@@ -31,7 +33,13 @@ public class Admin extends User {
     public void addToCalender() {
 
     }
-    public void addProfile() {
+
+    public void addProfile(String username, String password, int level) {
+
+
+       // MyDatabase.dbInstance().updateDB("INSERT INTO Users = 'user_ID"+ username + sc.hashpw(password) + level);
+
+
 
     }
     public void getProjectFromArchive() {
