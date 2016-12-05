@@ -14,7 +14,8 @@
          <content>
             <AnchorPane fx:id="pjMain" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="37.0" layoutY="143.0" mnemonicParsing="false" onAction="#getProjects" text="Get Projects" />
+                  <Button layoutX="78.0" layoutY="140.0" mnemonicParsing="false" onAction="#getProjects" text="Get Projects" />
+                  <Button fx:id="openPJ" layoutX="37.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" onAction="#openProject" text="Open project" />
                </children>
             </AnchorPane>
          </content>
