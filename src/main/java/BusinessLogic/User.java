@@ -2,13 +2,18 @@ package BusinessLogic;
 
 import Database.MyDatabase;
 import javafx.scene.control.Alert;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class User {
     Security sc = new Security();
     private static String username;
 
-    public void addToTimeline() {
-
+    public void addToTimeline(String message, String userN) {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        MyDatabase.dbInstance().updateDB("INSERT INTO Timeline values(null,'"+ dateFormat.format(date) +"', '"+ message +"',  null ,'" + userN + "');");
     }
 
     public void changeContent() {

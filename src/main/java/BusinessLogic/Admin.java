@@ -3,7 +3,6 @@ package BusinessLogic;
 
 import Database.MyDatabase;
 import javafx.scene.control.Alert;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
