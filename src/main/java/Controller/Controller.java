@@ -31,19 +31,20 @@ public class Controller {
 
     public void userLogin() {
         u.setUsername(user.getText());
-            switch (BL.validate(user.getText(), pass.getText())) {
-                case -1:
-                    InfoBox.info("Wrong Password!");
-                    break;
-                case 0:
-                    BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
-                    break;
-                case 1:
-                    BL.setScene((Stage) user.getScene().getWindow(), "../contractor.fxml");
-                    break;
-                case 2:
-                    BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
-                    break;
+        switch (BL.validate(user.getText(), pass.getText())) {
+            case -1:
+                InfoBox.info("Wrong Password!");
+                break;
+            case 0:
+                BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
+                break;
+            case 1:
+                BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
+                break;
+            case 2:
+                BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
+                break;
+
             }
         }
     public void userChangeLogin(){
