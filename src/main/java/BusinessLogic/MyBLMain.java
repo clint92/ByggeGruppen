@@ -1,9 +1,11 @@
 package BusinessLogic;
 
+import Controller.Controller;
 import Database.MyDatabase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -32,8 +34,8 @@ public class MyBLMain {
         }
     }
 
-    public VBox getTimeline(){
-        ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Timeline;");
+    public VBox getTimeline(String projectName){
+        ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Timeline where timelineID='"+ projectName +"';");
         VBox vb = new VBox();
         try {
             while (rs.next()) {
@@ -46,18 +48,34 @@ public class MyBLMain {
         return vb;
     }
 
-    public ComboBox getProjects(){
+    public ObservableList<String> getProjects(){
         ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Projects;");
-        ObservableList<Object> options = FXCollections.observableArrayList();
+        ObservableList<String> options = FXCollections.observableArrayList();
         try {
             while (rs.next()) {
-                options.add(new MyProject(rs.getInt("project_ID"), rs.getString("projectName")));
+                options.add(rs.getString("projectName"));
             }
         }
         catch(SQLException e){
             e.printStackTrace();
         }
-        ComboBox cb = new ComboBox(options);
-        return cb;
+        return options;
+    }
+
+    public String loadInformation(String st){
+        ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Projects where projectName='" + st + "';");
+        String info = "";
+        try {
+            while (rs.next()) {
+               info = "ProjektID : " + rs.getString("project_ID") +"\n" + "Projekt navn : "+ rs.getString("projectName")
+                       + "\n" + "Adresse : " + rs.getString("address") + "\n" + "Postnummer : " + rs.getInt("zip")
+                        + "\n" + "Beskrivelse : " + rs.getString("Description") + "\n" + "Start dato : " +  rs.getString("startDate") + "\n"
+                       + "Slut dato : " + rs.getString("endDate") + "\n" + "Pris : " + rs.getDouble("Price");
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return info;
     }
 }

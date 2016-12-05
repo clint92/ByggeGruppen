@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
@@ -14,8 +15,14 @@
          <content>
             <AnchorPane fx:id="pjMain" prefHeight="200.0" prefWidth="200.0">
                <children>
+<<<<<<< HEAD
+                  <Button fx:id="openPJ" layoutX="43.0" layoutY="89.0" mnemonicParsing="false" onAction="#openProject" prefHeight="25.0" prefWidth="147.0" text="Open project" />
+                  <ComboBox fx:id="cb" layoutX="43.0" layoutY="52.0" prefWidth="150.0" />
+                  <TextArea fx:id="infoText" layoutX="217.0" layoutY="14.0" prefHeight="285.0" prefWidth="341.0" />
+=======
                   <Button layoutX="78.0" layoutY="140.0" mnemonicParsing="false" onAction="#getProjects" text="Get Projects" />
                   <Button fx:id="openPJ" layoutX="37.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" onAction="#openProject" text="Open project" />
+>>>>>>> master
                </children>
             </AnchorPane>
          </content>

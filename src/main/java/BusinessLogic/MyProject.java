@@ -2,23 +2,28 @@ package BusinessLogic;
 
 
 public class MyProject {
-    private int projectID;
-    private String projectName;
+    private static String projectName;
+    private static MyProject mp;
 
-    public MyProject(int pID, String pName) {
-        this.projectID = pID;
-        this.projectName = pName;
+
+    private MyProject(String pName) {
+        projectName = pName;
+    }
+
+    public static synchronized MyProject projectInstance(){
+        if (mp == null) {
+            mp = new MyProject(projectName);
+        }
+        return mp;
     }
 
     public String getProjectName() {
         return projectName;
     }
-
-    public int getProjectID() {
-        return projectID;
+    public void setProjectName(String pName){
+        projectName = pName;
     }
-
     public String toString(){
-        return "" + projectID + projectName;
+        return projectName;
     }
 }

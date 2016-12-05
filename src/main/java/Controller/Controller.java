@@ -1,14 +1,11 @@
 package Controller;
 
 import BusinessLogic.*;
-import Database.MyDatabase;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 public class Controller {
@@ -28,23 +25,27 @@ public class Controller {
     public ScrollPane timeline;
 
     public AnchorPane pjMain;
+    public TextArea infoText;
+    public ComboBox cb;
 
     public void userLogin() {
         u.setUsername(user.getText());
-        switch (BL.validate(user.getText(), pass.getText())) {
-            case -1:
-                InfoBox.info("Wrong Password!");
-                break;
-            case 0:
-                BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
-                break;
-            case 1:
-                BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
-                break;
-            case 2:
-                BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
-                break;
-
+            switch (BL.validate(user.getText(), pass.getText())) {
+                case -1:
+                    InfoBox.info("Wrong Password!");
+                    break;
+                case 0:
+                    u = new Admin();
+                    BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
+                    break;
+                case 1:
+                    u = new Contractor();
+                    BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
+                    break;
+                case 2:
+                    u = new Client();
+                    BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
+                    break;
             }
         }
     public void userChangeLogin(){
@@ -55,13 +56,14 @@ public class Controller {
         u.addToTimeline(textfield.getText(), u.getUsername());
     }
 
-    public void getProjects() {pjMain.getChildren().addAll(BL.getProjects());}
-
     public void openProject() {
-        BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
+        if(cb.getValue() == null) {
+           InfoBox.info("Vælg et projekt!");
+        }else{
+            BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
+        }
     }
-
     public void setTimeline() {
-        timeline.setContent(BL.getTimeline());
+        timeline.setContent(BL.getTimeline(MyProject.projectInstance().getProjectName()));
     }
 }
