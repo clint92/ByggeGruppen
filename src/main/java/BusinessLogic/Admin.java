@@ -1,6 +1,8 @@
 package BusinessLogic;
 
 
+import Database.MyDatabase;
+
 public class Admin extends User {
     private int userid = 1;
 
