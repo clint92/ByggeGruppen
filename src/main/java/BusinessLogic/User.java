@@ -2,6 +2,7 @@ package BusinessLogic;
 
 import Database.MyDatabase;
 import javafx.scene.control.Alert;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,6 +11,8 @@ public class User {
     Security sc = new Security();
     private static String username;
     private static String level;
+    MyDatabase db = MyDatabase.dbInstance();
+
     public void addToTimeline(String pjName, String message, String userN) {
         String msg = message;
         int count = 0;
@@ -28,8 +31,7 @@ public class User {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
 
-
-        MyDatabase.dbInstance().updateDB("INSERT INTO Timeline values('" + pjName + "','"+ dateFormat.format(date) +"', '"+ msg +"',  null ,'" + userN + "');");
+        db.updateDB("INSERT INTO Timeline values('" + pjName + "','" + dateFormat.format(date) + "', '" + msg + "',  null ,'" + userN + "');");
     }
 
     public void changeContent() {
@@ -47,7 +49,7 @@ public class User {
             alert.setHeaderText("Succes!");
             alert.setContentText("Password changed");
             alert.showAndWait();
-            MyDatabase.dbInstance().updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
+            db.updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("System message");
@@ -65,8 +67,11 @@ public class User {
         User.username = username;
     }
 
-    public static String getLevel(){ return level;}
-    public static void setLevel(String level){
+    public static String getLevel() {
+        return level;
+    }
+
+    public static void setLevel(String level) {
         User.level = level;
     }
 }

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class MyProject {
     private static String projectName;
     private static MyProject mp;
-
+    MyDatabase db = MyDatabase.dbInstance();
 
     private MyProject(String pName) {
         projectName = pName;
@@ -24,11 +24,11 @@ public class MyProject {
         return mp;
     }
     public String projectInformation(String st){
-        ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Projects where projectName='" + st + "';");
+        ResultSet rs = db.query("SELECT * FROM Projects where projectName='" + st + "';");
         String info = "";
         try {
             while (rs.next()) {
-                info = "ProjektID : " + rs.getString("project_ID") +"\n" + "Projekt navn : "+ rs.getString("projectName")
+                info = "Projekt navn : "+ rs.getString("projectName")
                         + "\n" + "Adresse : " + rs.getString("address") + "\n" + "Postnummer : " + rs.getInt("zip")
                         + "\n" + "Beskrivelse : " + rs.getString("Description") + "\n" + "Start dato : " +  rs.getString("startDate") + "\n"
                         + "Slut dato : " + rs.getString("endDate") + "\n" + "Pris : " + rs.getDouble("Price");
@@ -40,7 +40,7 @@ public class MyProject {
         return info;
     }
     public ObservableList<String> getProjects(){
-        ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Projects;");
+        ResultSet rs = db.query("SELECT * FROM Projects;");
         ObservableList<String> options = FXCollections.observableArrayList();
         try {
             while (rs.next()) {

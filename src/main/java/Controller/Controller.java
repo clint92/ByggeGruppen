@@ -2,10 +2,7 @@ package Controller;
 
 import BusinessLogic.*;
 
-import Database.MyDatabase;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -16,6 +13,7 @@ public class Controller {
     MyBLMain BL = new MyBLMain();
     User u = new User();
     Timeline TL = new Timeline();
+    MyProject mp = MyProject.projectInstance();
     //////////////////////////////////////LOGIN
     @FXML
     private TextField user;
@@ -61,9 +59,9 @@ public class Controller {
     }
 
     public void sendMessage() {
-        u.addToTimeline(MyProject.projectInstance().getProjectName(), textfield.getText(), u.getUsername());
+        u.addToTimeline(mp.getProjectName(), textfield.getText(), u.getUsername());
         InfoBox.info("Sendt!");
-        timeline.setContent(TL.getTimeline(MyProject.projectInstance().getProjectName()));
+        timeline.setContent(TL.getTimeline(mp.getProjectName()));
         textfield.setText("");
     }
 

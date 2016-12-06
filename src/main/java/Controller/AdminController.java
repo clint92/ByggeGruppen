@@ -1,9 +1,6 @@
 package Controller;
 
-import BusinessLogic.MyProject;
-import BusinessLogic.Admin;
-import BusinessLogic.EmptyFieldException;
-import BusinessLogic.User;
+import BusinessLogic.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,9 +24,8 @@ public class AdminController extends Controller implements Initializable {
     public TextField email;
     public TextField number;
     //CreateProjekt!
-    public TextField cpID;
     public TextField cpName;
-    public TextField cpAdress;
+    public TextField cpAddress;
     public TextField cpZip;
     public TextField cpStartDate;
     public TextField cpEndDate;
@@ -43,10 +40,10 @@ public class AdminController extends Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usertype.setItems(types);
-        cb.setItems(MyProject.projectInstance().getProjects());
+        cb.setItems(mp.getProjects());
         cb.setOnAction(e -> {
-            infoText.setText(MyProject.projectInstance().projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
-            MyProject.projectInstance().setProjectName(cb.getSelectionModel().getSelectedItem().toString());
+            infoText.setText(mp.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
+            mp.setProjectName(cb.getSelectionModel().getSelectedItem().toString());
         });
     }
 
@@ -77,7 +74,21 @@ public class AdminController extends Controller implements Initializable {
         }
     }
 
-    public void createProject(){
+    public void createNewProject() {
+        try {
+            if (cpName.getText().equals("") || cpAddress.getText().equals("") || cpZip.getText().equals("")
+                    || cpStartDate.getText().equals("") || cpEndDate.getText().equals("") || cpPrice.getText().equals("") ||
+                    cpDescription.getText().equals("")) {
+                throw new EmptyFieldException();
+            }
+            else{
+                newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()),cpDescription.getText(),
+                        cpStartDate.getText(), cpEndDate.getText(), Double.parseDouble(cpPrice.getText()));
+                InfoBox.info("New project created!");
 
+            }
+        } catch (EmptyFieldException e) {
+
+        }
     }
 }

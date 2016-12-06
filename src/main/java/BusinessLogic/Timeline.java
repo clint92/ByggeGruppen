@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Timeline {
+    MyDatabase db = MyDatabase.dbInstance();
     public void addToTimeline() {
 
     }
@@ -16,7 +17,7 @@ public class Timeline {
 
     }
     public VBox getTimeline(String projectName){
-        ResultSet rs = MyDatabase.dbInstance().query("SELECT * FROM Timeline where timelineID='"+ projectName +"';");
+        ResultSet rs = db.query("SELECT * FROM Timeline where timelineID='"+ projectName +"';");
         VBox vb = new VBox();
         try {
             while (rs.next()) {
