@@ -4,6 +4,7 @@ import BusinessLogic.*;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.input.KeyEvent;
 import javafx.util.StringConverter;
 
 
@@ -52,5 +53,10 @@ public class ProjektInitialize extends Controller implements Initializable {
 
     public void getProjectDate(){
         timeline.setContent(mp.getProjectDate(calender.getEditor().getText()));
+    }
+
+    public void onEnterSendMessage(KeyEvent keyEvent) {
+
+        if (keyEvent.getCode().toString().equals("ENTER")) sendMessage();
     }
 }
