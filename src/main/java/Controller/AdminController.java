@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminController extends Controller implements Initializable {
-
+    //CreateUser!
     Admin newU = new Admin();
     public TextField usernameboks;
     public TextField passwordboks;
@@ -24,6 +24,7 @@ public class AdminController extends Controller implements Initializable {
     public TextField zip;
     public TextField email;
     public TextField number;
+    //CreateProjekt!
 
 
     @FXML
@@ -51,5 +52,9 @@ public class AdminController extends Controller implements Initializable {
         }
         newU.addProfile(usernameboks.getText(), passwordboks.getText(), level, firstname.getText(), lastname.getText(), address.getText(), Integer.parseInt(zip.getText()), email.getText(), Integer.parseInt(number.getText()));
         //System.out.println(usernameboks.getText() + passwordboks.getText() + level );
+    }
+
+    public void createProject(){
+
     }
 }
