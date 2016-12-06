@@ -1,16 +1,13 @@
 package BusinessLogic;
 
-import Controller.Controller;
 import Database.MyDatabase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.sql.ResultSet;
@@ -39,7 +36,7 @@ public class MyBLMain {
         VBox vb = new VBox();
         try {
             while (rs.next()) {
-                vb.getChildren().add(new Label(rs.getString("DateAndTime") +"[ " + rs.getString("firstName") + ": " +  rs.getString("Description") + " ]"));
+                vb.getChildren().add(new Text(rs.getString("DateAndTime") +"\n" + "From: " + rs.getString("firstName") + "\n" + "Sent: " +  rs.getString("Description") + "\n\n"));
             }
         }
         catch(SQLException e){

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProjektInitialize">
    <children>
       <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="297.0" prefWidth="404.0">
          <children>
@@ -27,6 +26,5 @@
       <Button fx:id="seedate" layoutX="464.0" layoutY="101.0" mnemonicParsing="false" text="See date" />
       <Button fx:id="addnote" layoutX="456.0" layoutY="246.0" mnemonicParsing="false" text="add to date" />
       <TextField fx:id="notetodate" layoutX="416.0" layoutY="150.0" prefHeight="89.0" prefWidth="171.0" promptText="Add to date" />
-      <Button fx:id="loadTimeline" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" onAction="#setTimeline" text="LoadConv" />
    </children>
 </Pane>
