@@ -1,15 +1,14 @@
 package Controller;
 
 import BusinessLogic.*;
+
 import Database.MyDatabase;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 public class Controller {
@@ -29,6 +28,8 @@ public class Controller {
     public ScrollPane timeline;
 
     public AnchorPane pjMain;
+    public TextArea infoText;
+    public ComboBox cb;
 
     public void userLogin() {
         u.setUsername(user.getText());
@@ -37,43 +38,44 @@ public class Controller {
                 InfoBox.info("Wrong Password!");
                 break;
             case 0:
+                u = new Admin();
+                u.setLevel("Admin");
                 BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
                 break;
             case 1:
+                u = new Contractor();
+                u.setLevel("Contractor");
                 BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
                 break;
             case 2:
+                u = new Client();
+                u.setLevel("Client");
                 BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
                 break;
-
-            }
         }
-    public void userChangeLogin(){
+    }
+
+    public void userChangeLogin() {
         u.changeLogin(u.getUsername(), pass1.getText(), pass2.getText());
     }
 
-    public void sendMessage(){
-        u.addToTimeline(textfield.getText(), u.getUsername());
+    public void sendMessage() {
+        u.addToTimeline(MyProject.projectInstance().getProjectName(), textfield.getText(), u.getUsername());
+        InfoBox.info("Sendt!");
+        timeline.setContent(BL.getTimeline(MyProject.projectInstance().getProjectName()));
+        textfield.setText("");
     }
-
-    public void getProjects() {pjMain.getChildren().addAll(BL.getProjects());}
 
     public void openProject() {
-        BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
+        if (cb.getValue() == null) {
+            InfoBox.info("Vælg et projekt!");
+        } else {
+            BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
+        }
+    }
+    public void pjBack(){
+        BL.setScene((Stage)timeline.getScene().getWindow(), "../"+ User.getLevel() + ".fxml");
     }
 
-    public void setTimeline() {
-        timeline.setContent(BL.getTimeline());
-    }
 
-    public void backButton()
-    {
-       /* Platform.runLater(() -> {
-            webEngine.executeScript("history.back()");
-        });
-    */}
-    public void forwardButton()
-    {
-
-    }
 }

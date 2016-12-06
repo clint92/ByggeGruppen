@@ -1,5 +1,6 @@
 package Controller;
 
+import BusinessLogic.MyProject;
 import BusinessLogic.Admin;
 import BusinessLogic.EmptyFieldException;
 import BusinessLogic.User;
@@ -8,16 +9,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static java.lang.Integer.parseInt;
-
 public class AdminController extends Controller implements Initializable {
+
     Admin newU = new Admin();
     public TextField usernameboks;
     public TextField passwordboks;
@@ -36,6 +33,11 @@ public class AdminController extends Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usertype.setItems(types);
+        cb.setItems(BL.getProjects());
+        cb.setOnAction(e -> {
+            infoText.setText(BL.loadInformation(cb.getSelectionModel().getSelectedItem().toString()));
+            MyProject.projectInstance().setProjectName(cb.getSelectionModel().getSelectedItem().toString());
+        });
     }
 
     public void createProfile() throws EmptyFieldException {
@@ -64,5 +66,4 @@ public class AdminController extends Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
 }
