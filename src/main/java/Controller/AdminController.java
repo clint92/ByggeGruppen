@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -50,7 +52,7 @@ public class AdminController extends Controller implements Initializable {
         });
     }
 
-    public void createProfile() throws EmptyFieldException {
+    public void createProfile() {
         int level = -1;
         try {
             if (usertype.getValue() != null) {
@@ -78,6 +80,26 @@ public class AdminController extends Controller implements Initializable {
     }
 
     public void createProject(){
+
+    }
+
+    public void onEnterAdminProjects(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) openProject();
+
+    }
+
+    public void onEnterChangeLogin(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) userChangeLogin();
+
+    }
+
+    public void onEnterAddUser(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) createProfile();
+    }
+
+    public void onEnterCreateProject(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) openProject();
+
 
     }
 }
