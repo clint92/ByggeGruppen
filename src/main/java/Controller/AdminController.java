@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,6 +26,14 @@ public class AdminController extends Controller implements Initializable {
     public TextField email;
     public TextField number;
     //CreateProjekt!
+    public TextField cpID;
+    public TextField cpName;
+    public TextField cpAdress;
+    public TextField cpZip;
+    public TextField cpStartDate;
+    public TextField cpEndDate;
+    public TextField cpPrice;
+    public TextArea cpDescription;
 
 
     @FXML
@@ -34,9 +43,9 @@ public class AdminController extends Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usertype.setItems(types);
-        cb.setItems(BL.getProjects());
+        cb.setItems(MyProject.projectInstance().getProjects());
         cb.setOnAction(e -> {
-            infoText.setText(BL.loadInformation(cb.getSelectionModel().getSelectedItem().toString()));
+            infoText.setText(MyProject.projectInstance().projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
             MyProject.projectInstance().setProjectName(cb.getSelectionModel().getSelectedItem().toString());
         });
     }

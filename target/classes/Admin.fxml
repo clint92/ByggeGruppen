@@ -63,7 +63,7 @@
                   <TextField fx:id="cpStartDate" layoutX="54.0" layoutY="186.0" promptText="StartDate" />
                   <TextField fx:id="cpEndDate" layoutX="54.0" layoutY="229.0" promptText="EndDate" />
                   <TextField fx:id="cpPrice" layoutX="54.0" layoutY="272.0" promptText="Price" />
-                  <Button fx:id="cpNewP" layoutX="242.0" layoutY="307.0" mnemonicParsing="false" text="Create new project" />
+                  <Button fx:id="cpNewP" layoutX="242.0" layoutY="307.0" mnemonicParsing="false" text="Create new project" onAction="#createProject" />
                   <TextArea fx:id="cpDescription" layoutX="246.0" layoutY="29.0" prefHeight="265.0" prefWidth="212.0" promptText="Description" />
                </children>
             </AnchorPane>

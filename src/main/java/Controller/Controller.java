@@ -15,6 +15,7 @@ public class Controller {
     ////////////////////////////////////// Overordnet
     MyBLMain BL = new MyBLMain();
     User u = new User();
+    Timeline TL = new Timeline();
     //////////////////////////////////////LOGIN
     @FXML
     private TextField user;
@@ -62,7 +63,7 @@ public class Controller {
     public void sendMessage() {
         u.addToTimeline(MyProject.projectInstance().getProjectName(), textfield.getText(), u.getUsername());
         InfoBox.info("Sendt!");
-        timeline.setContent(BL.getTimeline(MyProject.projectInstance().getProjectName()));
+        timeline.setContent(TL.getTimeline(MyProject.projectInstance().getProjectName()));
         textfield.setText("");
     }
 

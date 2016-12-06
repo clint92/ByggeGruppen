@@ -16,6 +16,6 @@ public class ProjektInitialize extends Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         timeline.setVvalue(1.0);
-        timeline.setContent(BL.getTimeline(MyProject.projectInstance().getProjectName()));
+        timeline.setContent(TL.getTimeline(MyProject.projectInstance().getProjectName()));
     }
 }
