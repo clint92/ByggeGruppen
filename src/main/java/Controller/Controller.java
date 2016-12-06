@@ -1,6 +1,9 @@
 package Controller;
 
 import BusinessLogic.*;
+
+import Database.MyDatabase;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -73,4 +76,6 @@ public class Controller {
     public void pjBack(){
         BL.setScene((Stage)timeline.getScene().getWindow(), "../"+ User.getLevel() + ".fxml");
     }
+
+
 }
