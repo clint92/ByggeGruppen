@@ -7,7 +7,7 @@ public class Security implements SecutiryInterface {
         for (int i = 0; i < pass.length(); i++) {
             hash = hash*31 + pass.charAt(i);
         }
-        return new String(hash + "");
+        return hash + "";
         //http://stackoverflow.com/questions/2624192/good-hash-function-for-strings
     }
 }
