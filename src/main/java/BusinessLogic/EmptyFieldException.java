@@ -15,7 +15,7 @@ public class EmptyFieldException extends Exception {
        Alert alert = new Alert(Alert.AlertType.INFORMATION);
        alert.setTitle("System message");
        alert.setHeaderText("Empty fields");
-       alert.setContentText("Not all fields has ben filled. /N fill all and try agin");
+       alert.setContentText("Not all fields has ben filled. Fill out all fields and press finish");
        alert.showAndWait();
    }
 

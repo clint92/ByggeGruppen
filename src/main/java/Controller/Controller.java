@@ -2,6 +2,7 @@ package Controller;
 
 import BusinessLogic.*;
 import Database.MyDatabase;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -63,5 +64,16 @@ public class Controller {
 
     public void setTimeline() {
         timeline.setContent(BL.getTimeline());
+    }
+
+    public void backButton()
+    {
+       /* Platform.runLater(() -> {
+            webEngine.executeScript("history.back()");
+        });
+    */}
+    public void forwardButton()
+    {
+
     }
 }
