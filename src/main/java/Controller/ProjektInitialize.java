@@ -1,7 +1,9 @@
 package Controller;
 
 import BusinessLogic.MyProject;
+import BusinessLogic.User;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;

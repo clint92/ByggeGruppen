@@ -9,7 +9,7 @@ import java.util.Date;
 public class User {
     Security sc = new Security();
     private static String username;
-
+    private static String level;
     public void addToTimeline(String pjName, String message, String userN) {
         String msg = message;
         int count = 0;
@@ -65,5 +65,8 @@ public class User {
         User.username = username;
     }
 
-
+    public static String getLevel(){ return level;}
+    public static void setLevel(String level){
+        User.level = level;
+    }
 }

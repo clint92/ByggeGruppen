@@ -36,14 +36,17 @@ public class Controller {
                 break;
             case 0:
                 u = new Admin();
+                u.setLevel("Admin");
                 BL.setScene((Stage) user.getScene().getWindow(), "../Admin.fxml");
                 break;
             case 1:
                 u = new Contractor();
+                u.setLevel("Contractor");
                 BL.setScene((Stage) user.getScene().getWindow(), "../Contractor.fxml");
                 break;
             case 2:
                 u = new Client();
+                u.setLevel("Client");
                 BL.setScene((Stage) user.getScene().getWindow(), "../Client.fxml");
                 break;
         }
@@ -56,6 +59,7 @@ public class Controller {
     public void sendMessage() {
         u.addToTimeline(MyProject.projectInstance().getProjectName(), textfield.getText(), u.getUsername());
         InfoBox.info("Sendt!");
+        timeline.setContent(BL.getTimeline(MyProject.projectInstance().getProjectName()));
         textfield.setText("");
     }
 
@@ -65,5 +69,8 @@ public class Controller {
         } else {
             BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
         }
+    }
+    public void pjBack(){
+        BL.setScene((Stage)timeline.getScene().getWindow(), "../"+ User.getLevel() + ".fxml");
     }
 }
