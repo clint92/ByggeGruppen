@@ -53,6 +53,20 @@ public class MyProject {
         return options;
     }
 
+    public ObservableList<String> getAllProjects(){
+        ResultSet rs = db.query("SELECT projectName FROM Projects;");
+        ObservableList<String> options = FXCollections.observableArrayList();
+        try {
+            while (rs.next()) {
+                options.add(rs.getString("projectName"));
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return options;
+    }
+
     public String getProjectName() {
         return projectName;
     }

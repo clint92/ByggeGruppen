@@ -13,8 +13,6 @@ public class ProjektInitialize extends Controller implements Initializable {
     @FXML
     public DatePicker calender;
     Timeline tl = new Timeline();
-    MyCalender mp = new MyCalender();
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         timeline.setVvalue(1.0);
@@ -24,7 +22,7 @@ public class ProjektInitialize extends Controller implements Initializable {
     }
 
     public void getProjectDate(){
-        timeline.setContent(mp.getProjectDate(calender.getEditor().getText()));
+        timeline.setContent(mc.getProjectDate(calender.getEditor().getText()));
     }
 
     public void onEnterSendMessage(KeyEvent keyEvent) {

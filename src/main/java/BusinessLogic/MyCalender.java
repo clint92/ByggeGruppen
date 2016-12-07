@@ -2,12 +2,10 @@ package BusinessLogic;
 
 import Database.MyDatabase;
 import javafx.scene.layout.VBox;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 

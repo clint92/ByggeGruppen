@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class AdminController extends Controller implements Initializable {
 
     //CreateUser!
@@ -42,7 +43,7 @@ public class AdminController extends Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usertype.setItems(types);
-        cb.setItems(mp.getProjects());
+        cb.setItems(mp.getAllProjects());
         cb.setOnAction(e -> {
             infoText.setText(mp.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
             mp.setProjectName(cb.getSelectionModel().getSelectedItem().toString());
@@ -84,9 +85,8 @@ public class AdminController extends Controller implements Initializable {
                     || cpStartDate.getEditor().getText().equals("") || cpEndDate.getEditor().getText().equals("") || cpPrice.getText().equals("") ||
                     cpDescription.getText().equals("")) {
                 throw new EmptyFieldException();
-            }
-            else{
-                newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()),cpDescription.getText(),
+            } else {
+                newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()), cpDescription.getText(),
                         cpStartDate.getEditor().getText(), cpEndDate.getEditor().getText(), Double.parseDouble(cpPrice.getText()));
                 InfoBox.info("New project created!");
                 cb.setItems(mp.getProjects());
@@ -116,3 +116,4 @@ public class AdminController extends Controller implements Initializable {
 
     }
 }
+

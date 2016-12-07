@@ -3,17 +3,9 @@ package BusinessLogic;
 import javafx.scene.control.Alert;
 
 public class Admin extends User {
-    private int userid = 1;
-
-    public int getUserid(){
-        return this.userid;
-    }
-
-    public void setUserid(int id){
-        this.userid = id;
-    }
 
     public void finishProject() {
+
     }
 
     public void createProject(String pName, String pAdress, int pZip, String pDescription, String pStartDate, String pEndDate, double pPrice) {
