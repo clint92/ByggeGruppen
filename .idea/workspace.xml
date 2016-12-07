@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b88e3e9e-978f-4370-8fab-99c75e360d0e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BusinessLogic/MyProject.class" afterPath="$PROJECT_DIR$/target/classes/BusinessLogic/MyProject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/Controller/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/ProjektInitialize.class" afterPath="$PROJECT_DIR$/target/classes/Controller/ProjektInitialize.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Project.fxml" afterPath="$PROJECT_DIR$/src/main/resources/Project.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Project.fxml" afterPath="$PROJECT_DIR$/target/classes/Project.fxml" />
     </list>
     <ignored path="1 Year Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,9 +110,9 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="1242" column="10" selection-start-line="1242" selection-start-column="10" selection-end-line="1242" selection-end-column="10" />
+              <caret line="1234" column="10" selection-start-line="1234" selection-start-column="10" selection-end-line="1234" selection-end-column="10" />
               <folding>
-                <marker date="1481114047761" expanded="true" signature="59:69559" ph="..." />
+                <marker date="1481114898180" expanded="true" signature="59:68160" ph="..." />
               </folding>
             </state>
           </provider>
@@ -836,12 +828,12 @@
       <workItem from="1481103334214" duration="2553000" />
       <workItem from="1481106842347" duration="1525000" />
       <workItem from="1481112477892" duration="24000" />
-      <workItem from="1481113351236" duration="865000" />
+      <workItem from="1481113351236" duration="1883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23258000" />
+    <option name="totallyTimeSpent" value="24276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1221,9 +1213,9 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="1242" column="10" selection-start-line="1242" selection-start-column="10" selection-end-line="1242" selection-end-column="10" />
+          <caret line="1234" column="10" selection-start-line="1234" selection-start-column="10" selection-end-line="1234" selection-end-column="10" />
           <folding>
-            <marker date="1481114047761" expanded="true" signature="59:69559" ph="..." />
+            <marker date="1481114898180" expanded="true" signature="59:68160" ph="..." />
           </folding>
         </state>
       </provider>
