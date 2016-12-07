@@ -2,20 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.control.PasswordField?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onEnterLogin" prefHeight="338.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
    <children>
       <ButtonBar layoutX="469.0" layoutY="314.0" prefHeight="40.0" prefWidth="60.0" />
       <ButtonBar layoutX="231.0" layoutY="314.0" prefHeight="40.0" prefWidth="200.0" />
     <Button layoutX="167.0" layoutY="243.0" mnemonicParsing="false" onAction="#userLogin" text="OK" textOverrun="CLIP" />
     <Button layoutX="264.0" layoutY="243.0" mnemonicParsing="false" text="Cancel" />
-      <TextField fx:id="user" layoutX="167.0" layoutY="122.0" promptText="Username" />
-      <PasswordField fx:id="pass" layoutX="167.0" layoutY="178.0" promptText="Password" />
+      <TextField fx:id="user" layoutX="137.0" layoutY="123.0" promptText="Username" />
+      <PasswordField fx:id="pass" layoutX="137.0" layoutY="182.0" promptText="Password" />
       <Text layoutX="224.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" />
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Management System" />
    </children>

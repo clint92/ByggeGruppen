@@ -5,9 +5,9 @@ import Database.MyDatabase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.InputMismatchException;
 
 public class Admin extends User {
     private int userid = 1;
@@ -23,9 +23,10 @@ public class Admin extends User {
     public void finishProject() {
     }
 
-    public void createProject() {
-
+    public void createProject(String pName, String pAdress, int pZip, String pDescription, String pStartDate, String pEndDate, double pPrice) {
+        db.updateDB("INSERT INTO Projects values('"+ pName +"','"+pAdress+"',"+pZip+",'"+pDescription+"','"+pStartDate+"','"+pEndDate+"',"+pPrice+")");
     }
+
     public void changeProject() {
 
     }
@@ -42,8 +43,8 @@ public class Admin extends User {
 
     public void addProfile(String username, String password, int level, String firstName, String lastName, String address, int zip, String email, int number ) throws EmptyFieldException {
 
-                MyDatabase.dbInstance().updateDB("INSERT INTO Users(user_ID, userName, password, level)" + "values(user_ID,'" + username + "'," + "'" + sc.hashpw(password) + "'," + level + ");");
-                MyDatabase.dbInstance().updateDB("INSERT INTO UserInformation(UsersUserID, Name, LastName, Address, Zip, Email, MobilNr)" +
+                db.updateDB("INSERT INTO Users(user_ID, userName, password, level)" + "values(user_ID,'" + username + "'," + "'" + sc.hashpw(password) + "'," + level + ");");
+                db.updateDB("INSERT INTO UserInformation(UsersUserID, Name, LastName, Address, Zip, Email, MobilNr)" +
                         "values( LAST_INSERT_ID() " + ",'" + firstName + "','" + lastName + "','" + address + "'," + zip + ",'" + email + "'," + number + ");");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("System message");

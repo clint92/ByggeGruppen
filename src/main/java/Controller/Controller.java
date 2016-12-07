@@ -2,11 +2,9 @@ package Controller;
 
 import BusinessLogic.*;
 
-import Database.MyDatabase;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -15,6 +13,9 @@ public class Controller {
     ////////////////////////////////////// Overordnet
     MyBLMain BL = new MyBLMain();
     User u = new User();
+    Timeline TL = new Timeline();
+    MyCalender mc = new MyCalender();
+    MyProject mp = MyProject.projectInstance();
     //////////////////////////////////////LOGIN
     @FXML
     private TextField user;
@@ -35,7 +36,7 @@ public class Controller {
         u.setUsername(user.getText());
         switch (BL.validate(user.getText(), pass.getText())) {
             case -1:
-                InfoBox.info("Wrong Password!");
+                InfoBox.info("Wrong Password or Username!");
                 break;
             case 0:
                 u = new Admin();
@@ -60,9 +61,9 @@ public class Controller {
     }
 
     public void sendMessage() {
-        u.addToTimeline(MyProject.projectInstance().getProjectName(), textfield.getText(), u.getUsername());
+        u.addToTimeline(mp.getProjectName(), textfield.getText(), u.getUsername());
         InfoBox.info("Sendt!");
-        timeline.setContent(BL.getTimeline(MyProject.projectInstance().getProjectName()));
+        timeline.setContent(TL.getTimeline(mp.getProjectName()));
         textfield.setText("");
     }
 
@@ -78,4 +79,9 @@ public class Controller {
     }
 
 
+    public void onEnterLogin(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) {
+            userLogin();
+        }
+    }
 }
