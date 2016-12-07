@@ -14,8 +14,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.input.KeyEvent;
 import javafx.util.StringConverter;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class ProjektInitialize extends Controller implements Initializable {
