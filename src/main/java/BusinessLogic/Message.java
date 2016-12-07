@@ -1,17 +1,14 @@
 package BusinessLogic;
 
-import Database.MyDatabase;
-
 /**
  * Created by Julius on 07-12-2016.
  */
-public class Message {
+public class Message implements MessageInterface{
     private String timelineID;
     private String dateAndTime;
     private String description;
     private String picture = "null";
     private String firstName;
-    MyDatabase db = MyDatabase.dbInstance();
 
     public Message(String tID, String dAT, String desc, String fN){
         this.timelineID = tID;
@@ -20,8 +17,10 @@ public class Message {
         this.picture = null;
         this.firstName = fN;
     }
-
-    public void send(){
+    public String getDescription(){
+        return this.description;
+    }
+    public String toString(){
         String msg = description;
         int count = 0;
         if (msg.length() > 50) {
@@ -36,7 +35,6 @@ public class Message {
                 count++;
             }
         }
-        db.updateDB("INSERT INTO Timeline values('" + timelineID + "','" + dateAndTime + "', '" + msg + "',"+ picture +",'" + firstName + "');");
-        InfoBox.info("Sendt!");
+        return "'" + timelineID + "','" + dateAndTime + "', '" + msg + "'," + picture + ",'" + firstName + "'";
     }
 }

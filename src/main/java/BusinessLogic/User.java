@@ -7,11 +7,14 @@ public class User {
     MyDatabase db = MyDatabase.dbInstance();
     private static String username;
     private static String level;
-    private Message msg;
 
-    public void addToTimeline(String message) {
-        msg = new Message(MyProject.getMyProjectName(), MyCalender.currentDate(), message, username);
-        msg.send();
+    public void addToTimeline(Message message) {
+        if(message.getDescription().length() <= 0){
+            InfoBox.info("Skriv venligst noget!");
+        }else {
+            db.updateDB("INSERT INTO Timeline values("+ message +");");
+            InfoBox.info("Sendt!");
+        }
     }
 
     public void changeContent() {

@@ -10,16 +10,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Admin extends User {
-    private MyProject op;
 
     public void finishProject() {
 
     }
-    public void createProject(String pName, String pAdress, int pZip, String pDescription, String pStartDate, String pEndDate, double pPrice) {
-        op = new MyProject(pName, pAdress, pZip, pDescription, pStartDate, pEndDate, pPrice);
-        op.create();
+    public void createProject(MyProject project) {
+        db.updateDB("INSERT INTO Projects values(" + project + ")");
+        InfoBox.info("New project created!");
     }
-
     public void changeProject() {
 
     }
@@ -29,7 +27,6 @@ public class Admin extends User {
     public void sendToArchive() {
 
     }
-
     public void addToCalender() {
 
     }
@@ -102,6 +99,4 @@ public class Admin extends User {
     public void getProjectFromArchive() {
 
     }
-
-
 }

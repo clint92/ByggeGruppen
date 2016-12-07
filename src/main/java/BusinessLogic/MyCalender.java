@@ -36,13 +36,11 @@ public class MyCalender {
         } else return vb;
 
     }
-
     public static String currentDate() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         return dateFormat.format(date);
     }
-
     //i tilfælde af vi vil have en anderledes date.
     public StringConverter<LocalDate> convertDate() {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

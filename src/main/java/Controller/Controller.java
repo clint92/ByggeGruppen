@@ -55,22 +55,19 @@ public class Controller {
                 break;
         }
     }
-
     public void userChangeLogin() {
         u.changeLogin(u.getUsername(), pass1.getText(), pass2.getText());
     }
-
     public void sendMessage() {
-        u.addToTimeline(textfield.getText());
+        u.addToTimeline(new Message(MyProject.getMyProjectName(), MyCalender.currentDate(), textfield.getText(), User.getUsername()));
         timeline.setContent(TL.getTimeline(MyProject.getMyProjectName()));
         textfield.setText("");
     }
-
     public void openProject() {
         if (cb.getValue() == null) {
             InfoBox.info("Vælg et projekt!");
         } else {
-            BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
+            BL.setScene((Stage) pass1.getScene().getWindow(), "../ProjectInterface.fxml");
         }
     }
     public void pjBack(){

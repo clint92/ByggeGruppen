@@ -28,12 +28,19 @@ public class AdminController extends Controller implements Initializable {
     private TextField email;
     private TextField number;
     //CreateProjekt!
+    @FXML
     private TextField cpName;
+    @FXML
     private TextField cpAddress;
+    @FXML
     private TextField cpZip;
+    @FXML
     private DatePicker cpStartDate;
+    @FXML
     private DatePicker cpEndDate;
+    @FXML
     private TextField cpPrice;
+    @FXML
     private TextArea cpDescription;
 
     @FXML
@@ -78,15 +85,18 @@ public class AdminController extends Controller implements Initializable {
     }
 
     public void createNewProject() {
+        String name = cpName.getText();
+        String address = cpAddress.getText();
+        String zip = cpZip.getText();
+        String description = cpDescription.getText();
+        String sDate = cpStartDate.getEditor().getText();
+        String eDate = cpEndDate.getEditor().getText();
+        String price = cpPrice.getText();
         try {
-            if (cpName.getText().equals("") || cpAddress.getText().equals("") || cpZip.getText().length() <= 4
-                    || cpDescription.getText().equals("") || cpStartDate.getEditor().getText().equals("") || cpEndDate.getEditor().getText().equals("")
-                    || cpPrice.getText().equals("")) {
+            if (name.equals("") || address.equals("") || zip.length() > 5 || description.equals("") || sDate.equals("") || eDate.equals("") || price.equals("")) {
                 throw new EmptyFieldException();
             } else {
-                newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()), cpDescription.getText(),
-                        cpStartDate.getEditor().getText(), cpEndDate.getEditor().getText(), Double.parseDouble(cpPrice.getText()));
-                cb.setItems(op.getAllProjects());
+                newU.createProject(new MyProject(name, address, Integer.parseInt(zip), description, sDate, eDate, Double.parseDouble(price)));
             }
         } catch (EmptyFieldException e) {
             e.printStackTrace();

@@ -2,31 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b88e3e9e-978f-4370-8fab-99c75e360d0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BusinessLogic/Admin.class" afterPath="$PROJECT_DIR$/target/classes/BusinessLogic/Admin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BusinessLogic/MyCalender.class" afterPath="$PROJECT_DIR$/target/classes/BusinessLogic/MyCalender.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BusinessLogic/MyProject.class" afterPath="$PROJECT_DIR$/target/classes/BusinessLogic/MyProject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BusinessLogic/User.class" afterPath="$PROJECT_DIR$/target/classes/BusinessLogic/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/Controller/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/ClientController.class" afterPath="$PROJECT_DIR$/target/classes/Controller/ClientController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/ContractorController.class" afterPath="$PROJECT_DIR$/target/classes/Controller/ContractorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/Controller.class" afterPath="$PROJECT_DIR$/target/classes/Controller/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/ProjectAddUser.class" afterPath="$PROJECT_DIR$/target/classes/Controller/ProjectAddUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/ProjektInitialize.class" afterPath="$PROJECT_DIR$/target/classes/Controller/ProjektInitialize.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/LoginInterface.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/MessageInterface.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/ProjectInterface.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/Project.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyBLMain.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyBLMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/Security.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/Security.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/SecutiryInterface.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/SecutiryInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BusinessLogic/User.java" afterPath="$PROJECT_DIR$/src/main/java/BusinessLogic/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/ClientController.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/ClientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/ContractorController.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/ContractorController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java" />
     </list>
     <ignored path="1 Year Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +39,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+            <state relative-caret-position="53">
+              <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#userLogin#0;class#Controller#0" expanded="false" />
+                <element signature="method#openProject#0;class#Controller#0" expanded="false" />
+                <element signature="method#onEnterLogin#0;class#Controller#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Admin.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#finishProject#0;class#Admin#0" expanded="false" />
+                <element signature="method#createProject#0;class#Admin#0" expanded="false" />
+                <element signature="method#changeProject#0;class#Admin#0" expanded="false" />
+                <element signature="method#deleteProject#0;class#Admin#0" expanded="false" />
+                <element signature="method#sendToArchive#0;class#Admin#0" expanded="false" />
+                <element signature="method#addToCalender#0;class#Admin#0" expanded="false" />
+                <element signature="method#findUsersForProject#0;class#Admin#0" expanded="false" />
+                <element signature="method#getProjectFromArchive#0;class#Admin#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MessageInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjektInitialize.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,114 +99,12 @@
       <file leaf-file-name="MyCalender.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
+                <element signature="method#getProjectDate#0;class#MyCalender#0" expanded="false" />
                 <element signature="method#currentDate#0;class#MyCalender#0" expanded="false" />
                 <element signature="method#convertDate#0;class#MyCalender#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-              <folding>
-                <element signature="docComment;class#Message#0" expanded="false" />
-                <element signature="method#send#0;class#Message#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Login#0;class#Login#0" expanded="false" />
-                <element signature="method#handleLogin#0;class#Login#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/AdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#createNewProject#0;class#AdminController#0" expanded="false" />
-                <element signature="method#onEnterAdminProjects#0;class#AdminController#0" expanded="false" />
-                <element signature="method#onEnterChangeLogin#0;class#AdminController#0" expanded="false" />
-                <element signature="method#onEnterAddUser#0;class#AdminController#0" expanded="false" />
-                <element signature="method#onEnterCreateProject#0;class#AdminController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Timeline.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Timeline.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjektInitialize.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyBLMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyBLMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#validate#0;class#MyBLMain#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -209,18 +141,21 @@
         <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Timeline.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ContractorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ClientController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/SecutiryInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Security.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/MyBLMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/SecutiryInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/LoginInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/MessageInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java" />
       </list>
     </option>
   </component>
@@ -881,12 +816,12 @@
       <workItem from="1481016724202" duration="4067000" />
       <workItem from="1481021309245" duration="2765000" />
       <workItem from="1481106017877" duration="3278000" />
-      <workItem from="1481116206243" duration="14981000" />
+      <workItem from="1481116206243" duration="18741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29959000" />
+    <option name="totallyTimeSpent" value="33719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -900,12 +835,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19742814" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44680852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44680852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19288956" sideWeight="0.4914842" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -916,7 +852,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -932,42 +867,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java</url>
-          <line>43</line>
+          <line>39</line>
           <properties class="BusinessLogic.MyProject" method="getMyProjectName" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java</url>
-          <line>75</line>
+          <line>71</line>
           <properties class="BusinessLogic.MyProject" method="getAllProjects" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Controller/AdminController.java</url>
-          <line>102</line>
+          <line>112</line>
           <properties class="Controller.AdminController" method="onEnterChangeLogin" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java</url>
-          <line>46</line>
+          <line>44</line>
           <properties class="BusinessLogic.MyCalender" method="convertDate" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java</url>
-          <line>23</line>
-          <properties class="BusinessLogic.Message" method="send" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Controller/AdminController.java</url>
-          <line>80</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -976,8 +905,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Project.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Timeline.java" />
     <entry file="file://$PROJECT_DIR$/src/Database.java" />
@@ -1063,17 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Admin.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Controller.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1126,17 +1042,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MyProject#0;class#MyProject#0" expanded="false" />
-            <element signature="method#MyProject#1;class#MyProject#0" expanded="false" />
-            <element signature="method#create#0;class#MyProject#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="true" />
-            <element signature="e#1394#1395#0" expanded="true" />
-            <element signature="method#projectInformation#0;class#MyProject#0" expanded="false" />
-            <element signature="method#getProjects#0;class#MyProject#0" expanded="false" />
-            <element signature="method#getAllProjects#0;class#MyProject#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,29 +1106,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/SecutiryInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Security.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="38" column="139" selection-start-line="38" selection-start-column="139" selection-end-line="38" selection-end-column="139" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1245,18 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Login#0;class#Login#0" expanded="false" />
-            <element signature="method#handleLogin#0;class#Login#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyBLMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -1268,20 +1144,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/SecutiryInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Login#0;class#Login#0" expanded="false" />
+            <element signature="method#handleLogin#0;class#Login#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/LoginInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Timeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="248">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setTimeline#0;class#Timeline#0" expanded="false" />
+            <element signature="method#getTimeline#0;class#Timeline#0" expanded="false" />
+            <element signature="method#uploadPicture#0;class#Timeline#0" expanded="false" />
+            <element signature="method#deleteFromTimelint#0;class#Timeline#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Admin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1290,10 +1209,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+        <state relative-caret-position="173">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#AdminController#0" expanded="false" />
+            <element signature="method#createProfile#0;class#AdminController#0" expanded="false" />
             <element signature="method#createNewProject#0;class#AdminController#0" expanded="false" />
             <element signature="method#onEnterAdminProjects#0;class#AdminController#0" expanded="false" />
             <element signature="method#onEnterChangeLogin#0;class#AdminController#0" expanded="false" />
@@ -1303,70 +1224,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#userLogin#0;class#Controller#0" expanded="false" />
+            <element signature="method#openProject#0;class#Controller#0" expanded="false" />
+            <element signature="method#onEnterLogin#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MessageInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyCalender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
+            <element signature="method#getProjectDate#0;class#MyCalender#0" expanded="false" />
             <element signature="method#currentDate#0;class#MyCalender#0" expanded="false" />
             <element signature="method#convertDate#0;class#MyCalender#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MyProject#0;class#MyProject#0" expanded="false" />
-            <element signature="method#MyProject#1;class#MyProject#0" expanded="false" />
-            <element signature="method#create#0;class#MyProject#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="true" />
-            <element signature="e#1394#1395#0" expanded="true" />
-            <element signature="method#projectInformation#0;class#MyProject#0" expanded="false" />
-            <element signature="method#getProjects#0;class#MyProject#0" expanded="false" />
-            <element signature="method#getAllProjects#0;class#MyProject#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        <state relative-caret-position="-30">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Message#0" expanded="false" />
-            <element signature="method#send#0;class#Message#0" expanded="false" />
+            <element signature="method#Message#0;class#Message#0" expanded="false" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="method#toString#0;class#Message#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/ProjectInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="68">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToTimeline#0;class#User#0" expanded="false" />
+            <element signature="method#changeContent#0;class#User#0" expanded="false" />
+            <element signature="method#deleteContent#0;class#User#0" expanded="false" />
+            <element signature="method#changeLogin#0;class#User#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/MyProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+        <state relative-caret-position="55">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#finishProject#0;class#Admin#0" expanded="false" />
+            <element signature="method#createProject#0;class#Admin#0" expanded="false" />
+            <element signature="method#changeProject#0;class#Admin#0" expanded="false" />
+            <element signature="method#deleteProject#0;class#Admin#0" expanded="false" />
+            <element signature="method#sendToArchive#0;class#Admin#0" expanded="false" />
+            <element signature="method#addToCalender#0;class#Admin#0" expanded="false" />
+            <element signature="method#findUsersForProject#0;class#Admin#0" expanded="false" />
+            <element signature="method#getProjectFromArchive#0;class#Admin#0" expanded="false" />
           </folding>
         </state>
       </provider>

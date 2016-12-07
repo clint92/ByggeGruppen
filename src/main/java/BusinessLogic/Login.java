@@ -5,7 +5,7 @@ import Database.MyDatabase;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Login {
+public class Login implements LoginInterface {
 
     private String user;
     private String pass;

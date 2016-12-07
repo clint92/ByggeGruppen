@@ -10,7 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by Julius on 07-12-2016.
  */
-public class MyProject {
+public class MyProject implements ProjectInterface {
     private static String myProjectName;
 
     private String projectName;
@@ -34,10 +34,6 @@ public class MyProject {
         this.endDate = endDate;
         this.price = price;
     }
-    public void create() {
-            db.updateDB("INSERT INTO Projects values('" + projectName + "','" + address + "'," + zip + ",'" + description + "','" + startDate + "','" + endDate + "'," + price + ")");
-            InfoBox.info("New project created!");
-        }
     public static void setMyProjectName(String pName){
         myProjectName = pName;
     }
@@ -85,5 +81,8 @@ public class MyProject {
             e.printStackTrace();
         }
         return options;
+    }
+    public String toString(){
+        return "'" + projectName + "','" + address + "'," + zip + ",'" + description + "','" + startDate + "','" + endDate + "'," + price;
     }
 }
