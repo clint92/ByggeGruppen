@@ -40,7 +40,7 @@ public class MyProject {
         return info;
     }
     public ObservableList<String> getProjects(){
-        ResultSet rs = db.query("SELECT * FROM Projects;");
+        ResultSet rs = db.query("SELECT projectName FROM UserProjectRelation where UserName='" + User.getUsername() + "';");
         ObservableList<String> options = FXCollections.observableArrayList();
         try {
             while (rs.next()) {
