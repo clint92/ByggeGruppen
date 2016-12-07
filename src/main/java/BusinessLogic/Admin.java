@@ -49,18 +49,17 @@ public class Admin extends User {
     {
         String iduser = "";
         ObservableList<String> ID = FXCollections.observableArrayList();
-        int level = -1;
-        if(type.equals("Admin"))
-        {
-            level = 0;
-        }
-        else if (type.equals("Contractor"))
+        int level;
+        if (type.equals("Contractor"))
         {
             level = 1;
         }
         else if(type.equals("Client"))
         {
             level = 2;
+        }
+        else{
+            level = -1;
         }
         ResultSet usersID = MyDatabase.dbInstance().query("SELECT user_ID FROM Users WHERE level = " + level + ";");
         try {

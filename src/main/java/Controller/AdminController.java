@@ -89,7 +89,7 @@ public class AdminController extends Controller implements Initializable {
                 newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()), cpDescription.getText(),
                         cpStartDate.getEditor().getText(), cpEndDate.getEditor().getText(), Double.parseDouble(cpPrice.getText()));
                 InfoBox.info("New project created!");
-                cb.setItems(mp.getProjects());
+                cb.setItems(mp.getAllProjects());
 
             }
         } catch (EmptyFieldException e) {

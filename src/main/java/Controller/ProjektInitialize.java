@@ -19,16 +19,19 @@ import java.util.ResourceBundle;
 public class ProjektInitialize extends Controller implements Initializable {
     public ProjectAddUser e;
     public ComboBox<String> addUser;
-    public ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor", "Admin");
+    public ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor");
     public DatePicker calender;
     Timeline tl = new Timeline();
+    public String checkers;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         timeline.setVvalue(1.0);
         timeline.setContent(tl.getTimeline(MyProject.projectInstance().getProjectName()));
-
         e = new ProjectAddUser(addUser,types);
         e.initialize(location,resources);
+        if(u.getLevel() == "Admin"){
+            addUser.setVisible(true);
+        }
     }
 
 
