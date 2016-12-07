@@ -2,13 +2,14 @@
 
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProjektInitialize">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProjektInitialize">
    <children>
       <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="297.0" prefWidth="404.0">
          <children>
@@ -26,6 +27,7 @@
       <Button fx:id="seedate" layoutX="464.0" layoutY="101.0" mnemonicParsing="false" text="See date" />
       <Button fx:id="addnote" layoutX="409.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="add to date" />
       <TextField fx:id="notetodate" layoutX="409.0" layoutY="126.0" prefHeight="89.0" prefWidth="171.0" promptText="Add to date" />
-      <Button fx:id="backPJ" layoutX="509.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Back" onAction="#pjBack"  />
+      <Button fx:id="backPJ" layoutX="509.0" layoutY="338.0" mnemonicParsing="false" onAction="#pjBack" prefHeight="25.0" prefWidth="62.0" text="Back" />
+      <ComboBox fx:id="addUser" layoutX="410.0" layoutY="259.0" prefHeight="25.0" prefWidth="171.0" promptText="Add user to Project" />
    </children>
 </Pane>
