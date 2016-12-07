@@ -6,17 +6,15 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
-=======
 import javafx.scene.input.KeyEvent;
->>>>>>> master
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminController extends Controller implements Initializable {
+
     //CreateUser!
     Admin newU = new Admin();
     public TextField usernameboks;
@@ -31,8 +29,8 @@ public class AdminController extends Controller implements Initializable {
     public TextField cpName;
     public TextField cpAddress;
     public TextField cpZip;
-    public TextField cpStartDate;
-    public TextField cpEndDate;
+    public DatePicker cpStartDate;
+    public DatePicker cpEndDate;
     public TextField cpPrice;
     public TextArea cpDescription;
 
@@ -49,6 +47,8 @@ public class AdminController extends Controller implements Initializable {
             infoText.setText(mp.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
             mp.setProjectName(cb.getSelectionModel().getSelectedItem().toString());
         });
+        cpStartDate.setConverter(mc.convertDate());
+        cpEndDate.setConverter(mc.convertDate());
     }
 
     public void createProfile() {
@@ -81,13 +81,13 @@ public class AdminController extends Controller implements Initializable {
     public void createNewProject() {
         try {
             if (cpName.getText().equals("") || cpAddress.getText().equals("") || cpZip.getText().equals("")
-                    || cpStartDate.getText().equals("") || cpEndDate.getText().equals("") || cpPrice.getText().equals("") ||
+                    || cpStartDate.getEditor().getText().equals("") || cpEndDate.getEditor().getText().equals("") || cpPrice.getText().equals("") ||
                     cpDescription.getText().equals("")) {
                 throw new EmptyFieldException();
             }
             else{
                 newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()),cpDescription.getText(),
-                        cpStartDate.getText(), cpEndDate.getText(), Double.parseDouble(cpPrice.getText()));
+                        cpStartDate.getEditor().getText(), cpEndDate.getEditor().getText(), Double.parseDouble(cpPrice.getText()));
                 InfoBox.info("New project created!");
 
             }
@@ -111,8 +111,7 @@ public class AdminController extends Controller implements Initializable {
     }
 
     public void onEnterCreateProject(KeyEvent keyEvent) {
-        if (keyEvent.getCode().toString().equals("ENTER")) openProject();
-
+        if (keyEvent.getCode().toString().equals("ENTER")) createNewProject();
 
     }
 }

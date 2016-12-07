@@ -1,29 +1,22 @@
 package BusinessLogic;
 
 import Database.MyDatabase;
-import javafx.scene.control.DatePicker;
 import javafx.scene.layout.VBox;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import javafx.scene.text.Text;
+import javafx.util.StringConverter;
 
 public class MyCalender {
     Timeline tl = new Timeline();
 
-
-
-
-
-    public void myCalender(DatePicker startDate, DatePicker endDate ) {
-
-    }
-
     public VBox getProjectDate (String date) {
         VBox vb = new VBox();
-        ResultSet rs = MyDatabase.dbInstance().query("SELECT  * FROM Timeline");
-
-
+        ResultSet rs = MyDatabase.dbInstance().query("SELECT  * FROM Timeline where timelineID='"+ MyProject.projectInstance().getProjectName() +"'");
 
         try {
             while (rs.next()) {
@@ -44,9 +37,30 @@ public class MyCalender {
 
     }
 
+    public StringConverter<LocalDate> convertDate(){
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        StringConverter<LocalDate> lc = new StringConverter<LocalDate>() {
+            @Override
+            public String toString(LocalDate date) {
+                if (date != null) {
+                    return dateFormatter.format(date);
+                } else {
+                    return "";
+                }
+            }
 
-
-
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        };
+        return lc;
+    }
 }
+
 
 

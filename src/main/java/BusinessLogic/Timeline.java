@@ -10,9 +10,6 @@ import java.sql.SQLException;
 
 public class Timeline {
     MyDatabase db = MyDatabase.dbInstance();
-    public void addToTimeline() {
-
-    }
     public void setTimeline() {
 
     }
@@ -35,9 +32,4 @@ public class Timeline {
     public void deleteFromTimelint() {
 
     }
-
-    public void operation() {
-
-    }
-
 }

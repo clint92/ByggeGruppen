@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
@@ -9,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
     <tabs>
         <Tab text="Projects">
          <content>
-            <AnchorPane fx:id="pjMain" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="pjMain" onKeyPressed="#onEnterAdminProjects" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Button fx:id="openPJ" layoutX="43.0" layoutY="89.0" mnemonicParsing="false" onAction="#openProject" prefHeight="25.0" prefWidth="147.0" text="Open project" />
                   <ComboBox fx:id="cb" layoutX="43.0" layoutY="52.0" prefWidth="150.0" />
@@ -24,7 +25,7 @@
         </Tab>
         <Tab text="Change login">
             <content>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                <AnchorPane onKeyPressed="#onEnterChangeLogin" prefHeight="200.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="pass1" layoutX="192.0" layoutY="108.0" />
                         <TextField fx:id="pass2" layoutX="192.0" layoutY="173.0" />
@@ -36,7 +37,7 @@
         </Tab>
         <Tab text="Add user">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" onKeyPressed="#onEnterAddUser" prefHeight="180.0" prefWidth="200.0">
                     <children>
                         <ComboBox fx:id="usertype" layoutX="243.0" layoutY="21.0" promptText="User type " />
                         <TextField fx:id="firstname" layoutX="34.0" layoutY="112.0" promptText="First name" />
@@ -54,16 +55,16 @@
         </Tab>
       <Tab text="Create Project">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" onKeyPressed="#onEnterCreateProject" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="cpName" layoutX="54.0" layoutY="62.0" promptText="Project Name" />
                   <TextField fx:id="cpAddress" layoutX="54.0" layoutY="104.0" promptText="Address" />
                   <TextField fx:id="cpZip" layoutX="54.0" layoutY="148.0" promptText="Zip" />
-                  <TextField fx:id="cpStartDate" layoutX="54.0" layoutY="186.0" promptText="StartDate" />
-                  <TextField fx:id="cpEndDate" layoutX="54.0" layoutY="229.0" promptText="EndDate" />
-                  <TextField fx:id="cpPrice" layoutX="54.0" layoutY="272.0" promptText="Price" />
+                  <TextField fx:id="cpPrice" layoutX="54.0" layoutY="262.0" promptText="Price" />
                   <Button fx:id="cpNewP" layoutX="242.0" layoutY="307.0" mnemonicParsing="false" onAction="#createNewProject" text="Create new project" />
                   <TextArea fx:id="cpDescription" layoutX="246.0" layoutY="29.0" prefHeight="265.0" prefWidth="212.0" promptText="Description" />
+                  <DatePicker fx:id="cpStartDate" layoutX="54.0" layoutY="186.0" promptText="StartDate" />
+                  <DatePicker fx:id="cpEndDate" layoutX="54.0" layoutY="224.0" promptText="End Date" />
                </children>
             </AnchorPane>
         </content>

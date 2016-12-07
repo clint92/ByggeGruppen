@@ -14,6 +14,7 @@ public class Controller {
     MyBLMain BL = new MyBLMain();
     User u = new User();
     Timeline TL = new Timeline();
+    MyCalender mc = new MyCalender();
     MyProject mp = MyProject.projectInstance();
     //////////////////////////////////////LOGIN
     @FXML
