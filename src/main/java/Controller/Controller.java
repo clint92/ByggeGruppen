@@ -36,7 +36,7 @@ public class Controller {
         u.setUsername(user.getText());
         switch (BL.validate(user.getText(), pass.getText())) {
             case -1:
-                InfoBox.info("Wrong Password!");
+                InfoBox.info("Wrong Password or Username!");
                 break;
             case 0:
                 u = new Admin();

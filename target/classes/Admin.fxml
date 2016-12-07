@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
     <tabs>
         <Tab text="Projects">
          <content>
             <AnchorPane fx:id="pjMain" onKeyPressed="#onEnterAdminProjects" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="openPJ" layoutX="43.0" layoutY="89.0" mnemonicParsing="false" onAction="#openProject" prefHeight="25.0" prefWidth="147.0" text="Open project" />
+                  <Button fx:id="openPJ" layoutX="45.0" layoutY="101.0" mnemonicParsing="false" onAction="#openProject" prefHeight="25.0" prefWidth="147.0" text="Open project" />
                   <ComboBox fx:id="cb" layoutX="43.0" layoutY="52.0" prefWidth="150.0" />
                   <TextArea fx:id="infoText" layoutX="217.0" layoutY="14.0" prefHeight="285.0" prefWidth="341.0" />
                </children>
