@@ -9,6 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProjektInitialize">
+=======
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProjektInitialize">
+>>>>>>> juliusworkspace
     <children>
         <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="297.0" prefWidth="404.0">
             <children>
@@ -19,13 +22,13 @@
                 </ScrollPane>
             </children>
         </AnchorPane>
-        <TextField fx:id="textfield" layoutX="9.0" layoutY="306.0" onKeyPressed="#onEnterSendMessage" prefHeight="89.0" prefWidth="389.0" promptText="Add update" />
-        <Button fx:id="send" layoutX="410.0" layoutY="351.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="25.0" prefWidth="69.0" text="Send" />
-        <Button fx:id="addfile" layoutX="410.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Add file" />
-        <DatePicker fx:id="calender" layoutX="405.0" layoutY="43.0" prefHeight="39.0" prefWidth="188.0" promptText="Choose date" />
-        <Button fx:id="seedate" layoutX="444.0" layoutY="92.0" mnemonicParsing="false" text="See date" />
-        <Button fx:id="addnote" layoutX="432.0" layoutY="252.0" mnemonicParsing="false" text="add to date" />
-        <TextField fx:id="notetodate" layoutX="405.0" layoutY="143.0" prefHeight="89.0" prefWidth="171.0" promptText="Add to date" />
-        <Button fx:id="backPJ" layoutX="506.0" layoutY="300.0" mnemonicParsing="false" onAction="#pjBack" prefHeight="25.0" prefWidth="62.0" text="Back" />
+        <TextField fx:id="textfield" layoutX="-1.0" layoutY="300.0" onKeyPressed="#onEnterSendMessage" prefHeight="101.0" prefWidth="406.0" promptText="Add update" />
+        <Button fx:id="send" layoutX="505.0" layoutY="338.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="25.0" prefWidth="69.0" text="Send" />
+        <Button fx:id="addfile" layoutX="421.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Add file" />
+        <DatePicker fx:id="calender" layoutX="405.0" layoutY="43.0" prefHeight="35.0" prefWidth="196.0" promptText="Choose date" />
+        <Button fx:id="seedate" layoutX="464.0" layoutY="101.0" mnemonicParsing="false" text="See date" />
+        <Button fx:id="addnote" layoutX="456.0" layoutY="246.0" mnemonicParsing="false" text="add to date" />
+        <TextField fx:id="notetodate" layoutX="416.0" layoutY="150.0" prefHeight="89.0" prefWidth="171.0" promptText="Add to date" />
+        <Button fx:id="backPJ" layoutX="509.0" layoutY="300.0" mnemonicParsing="false" onAction="#pjBack" prefHeight="25.0" prefWidth="62.0" text="Back" />
     </children>
 </Pane>
