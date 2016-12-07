@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b88e3e9e-978f-4370-8fab-99c75e360d0e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Admin.fxml" afterPath="$PROJECT_DIR$/src/main/resources/Admin.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Controller.fxml" afterPath="$PROJECT_DIR$/src/main/resources/Controller.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Project.fxml" afterPath="$PROJECT_DIR$/src/main/resources/Project.fxml" />
-    </list>
+    <list default="true" id="b88e3e9e-978f-4370-8fab-99c75e360d0e" name="Default" comment="" />
     <ignored path="1 Year Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,7 +26,7 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1020">
               <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -43,7 +38,7 @@
       <file leaf-file-name="ProjektInitialize.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="255">
               <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
               <folding />
             </state>
@@ -53,7 +48,7 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="170">
               <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding />
             </state>
@@ -63,7 +58,7 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2059">
+            <state relative-caret-position="102">
               <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding />
             </state>
@@ -73,7 +68,7 @@
       <file leaf-file-name="ContractorController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ContractorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="119">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -85,7 +80,7 @@
       <file leaf-file-name="ClientController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="187">
               <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,7 +92,7 @@
       <file leaf-file-name="Timeline.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Timeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="493">
               <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,7 +104,7 @@
       <file leaf-file-name="Controller.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Controller.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="119">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
@@ -122,7 +117,7 @@
       <file leaf-file-name="Admin.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Admin.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="50">
+            <state relative-caret-position="289">
               <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
@@ -204,10 +199,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1942" />
-    <option name="height" value="1042" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -234,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +345,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
@@ -817,15 +812,16 @@
       <workItem from="1481025176417" duration="6591000" />
       <workItem from="1481103334214" duration="2553000" />
       <workItem from="1481106842347" duration="1525000" />
+      <workItem from="1481112477892" duration="24000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22369000" />
+    <option name="totallyTimeSpent" value="22393000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -834,12 +830,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19742814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1843044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1816694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32026145" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19567567" sideWeight="0.4914842" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19515885" sideWeight="0.4914842" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -987,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,10 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,7 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,7 +1114,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Controller.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="119">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
@@ -1148,7 +1136,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Admin.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="289">
           <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
@@ -1159,7 +1147,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ProjektInitialize.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="255">
           <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding />
         </state>
@@ -1167,7 +1155,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2059">
+        <state relative-caret-position="102">
           <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
@@ -1175,7 +1163,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ContractorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1185,7 +1173,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="187">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1195,7 +1183,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/Timeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="493">
           <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1205,7 +1193,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="1020">
           <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1215,7 +1203,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLogic/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="170">
           <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
         </state>
