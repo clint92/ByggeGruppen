@@ -1,6 +1,13 @@
 package BusinessLogic;
 
+
+import Database.MyDatabase;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Admin extends User {
 
@@ -38,6 +45,58 @@ public class Admin extends User {
                 alert.showAndWait();
             }
 
+    public ObservableList<String> findUsersForProject(String type)
+    {
+        String iduser = "";
+        ObservableList<String> ID = FXCollections.observableArrayList();
+        int level = -1;
+        if(type.equals("Admin"))
+        {
+            level = 0;
+        }
+        else if (type.equals("Contractor"))
+        {
+            level = 1;
+        }
+        else if(type.equals("Client"))
+        {
+            level = 2;
+        }
+        ResultSet usersID = MyDatabase.dbInstance().query("SELECT user_ID FROM Users WHERE level = " + level + ";");
+        try {
+            while (usersID.next()) {
+                iduser =  usersID.getString("user_ID");
+                ResultSet temp = MyDatabase.dbInstance().query("SELECT Name FROM UserInformation WHERE UsersUserID = " + usersID.getString("user_ID") + ";");
+                while(temp.next()) {
+                    iduser += " Name: " + temp.getString("Name");
+
+                }
+                ID.add(iduser);
+                                //String name = MyDatabase.dbInstance().query("SELECT user_ID FROM Users WHERE level = " + level + ";");
+            }
+        }
+        catch(SQLException e)
+            {
+                e.printStackTrace();
+            }
+            return ID;
+    }
+
+    public void addUserToProject(String user)
+    {
+        ResultSet userName = MyDatabase.dbInstance().query("SELECT userName FROM Users WHERE User_ID = " + user + ";");
+        try {
+            while (userName.next()) {
+                String name = userName.getString("userName");
+
+                MyDatabase.dbInstance().updateDB("INSERT INTO UserProjectRelation values(RelationID," + user + ",'" + MyProject.projectInstance().getProjectName() + "', '" + name +"');");
+            }
+        }
+            catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 
     public void getProjectFromArchive() {
