@@ -7,7 +7,32 @@ public class User {
     MyDatabase db = MyDatabase.dbInstance();
     private static String username;
     private static String level;
+    //Users <- database
+    private String userN;
+    private String passW;
+    private int lvl;
+    //UserInfomation
+    private String name;
+    private String lName;
+    private String address;
+    private int zip;
+    private String email;
+    private int mobil;
 
+    public User(){
+
+    }
+    public User(String userN, String passW, int lvl, String name, String lName, String address, int zip, String email, int mobil) {
+        this.userN = userN;
+        this.passW = passW;
+        this.lvl = lvl;
+        this.name = name;
+        this.lName = lName;
+        this.address = address;
+        this.zip = zip;
+        this.email = email;
+        this.mobil = mobil;
+    }
     public void addToTimeline(Message message) {
         if(message.getDescription().length() <= 0){
             InfoBox.info("Skriv venligst noget!");
@@ -56,5 +81,13 @@ public class User {
 
     public static void setLevel(String level) {
         User.level = level;
+    }
+
+    public String Information(){
+        return "LAST_INSERT_ID(), '" + name + "', '"+ lName + "', '"+ address+"', " + zip+ ", '"+ email +"', " + mobil;
+
+    }
+    public String toString(){
+        return "user_ID, '" + userN + "', '" + Security.hashpw(passW) + "'," + lvl;
     }
 }

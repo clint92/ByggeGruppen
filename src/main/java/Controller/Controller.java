@@ -67,7 +67,7 @@ public class Controller {
         if (cb.getValue() == null) {
             InfoBox.info("Vælg et projekt!");
         } else {
-            BL.setScene((Stage) pass1.getScene().getWindow(), "../ProjectInterface.fxml");
+            BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
         }
     }
     public void pjBack(){

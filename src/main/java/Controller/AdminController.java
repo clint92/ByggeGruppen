@@ -19,13 +19,21 @@ public class AdminController extends Controller implements Initializable {
 
     //CreateUser!
     Admin newU = new Admin();
+    @FXML
     private TextField usernameboks;
+    @FXML
     private TextField passwordboks;
+    @FXML
     private TextField firstname;
+    @FXML
     private TextField lastname;
+    @FXML
     private TextField address;
+    @FXML
     private TextField zip;
+    @FXML
     private TextField email;
+    @FXML
     private TextField number;
     //CreateProjekt!
     @FXML
@@ -58,10 +66,19 @@ public class AdminController extends Controller implements Initializable {
     }
 
     public void createProfile() {
+        String userN = usernameboks.getText();
+        String passW = passwordboks.getText();
+        String fName = firstname.getText();
+        String lName = lastname.getText();
+        String street = address.getText();
+        String postcode = zip.getText();
+        String mail = email.getText();
+        String mobil = number.getText();
         int level = -1;
+
         try {
             if (usertype.getValue() != null) {
-                String type = usertype.getSelectionModel().getSelectedItem().toString();
+                String type = usertype.getSelectionModel().getSelectedItem();
                 if (type.equals("Client")) {
                     level = 2;
                 } else if (type.equals("Contractor")) {
@@ -72,12 +89,11 @@ public class AdminController extends Controller implements Initializable {
             } else {
                 throw new EmptyFieldException();
             }
-            if (usernameboks.getText().equals("") || passwordboks.getText().equals("") || level == -1 || firstname.getText().equals("") || lastname.getText().equals("") || address.getText().equals("") || zip.getText().equals("") || email.getText().equals("") || number.getText().equals("")) {
-                System.out.println("fejl");
+            if (userN.isEmpty() || passW.isEmpty() || level == -1 || fName.isEmpty() || lName.isEmpty() || street.isEmpty() || postcode.isEmpty() || mail.isEmpty() || mobil.isEmpty()) {
                 throw new EmptyFieldException();
             } else {
-                newU.addProfile(usernameboks.getText(), passwordboks.getText(), level, firstname.getText(), lastname.getText(), address.getText(), Integer.parseInt(zip.getText()), email.getText(), Integer.parseInt(number.getText()));
-                System.out.println(firstname.getText());
+                newU.addProfile(new User(userN, passW, level, fName, lName, street, Integer.parseInt(postcode), mail, Integer.parseInt(mobil)));
+
             }
         } catch (EmptyFieldException e) {
             e.printStackTrace();
@@ -93,10 +109,11 @@ public class AdminController extends Controller implements Initializable {
         String eDate = cpEndDate.getEditor().getText();
         String price = cpPrice.getText();
         try {
-            if (name.equals("") || address.equals("") || zip.length() > 5 || description.equals("") || sDate.equals("") || eDate.equals("") || price.equals("")) {
+            if (name.isEmpty() || address.isEmpty() || zip.length() >= 5 || description.isEmpty() || sDate.isEmpty() || eDate.isEmpty() || price.isEmpty()) {
                 throw new EmptyFieldException();
             } else {
                 newU.createProject(new MyProject(name, address, Integer.parseInt(zip), description, sDate, eDate, Double.parseDouble(price)));
+                cb.setItems(op.getAllProjects());
             }
         } catch (EmptyFieldException e) {
             e.printStackTrace();
