@@ -4,6 +4,7 @@ import BusinessLogic.*;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -77,4 +78,9 @@ public class Controller {
     }
 
 
+    public void onEnterLogin(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) {
+            userLogin();
+        }
+    }
 }

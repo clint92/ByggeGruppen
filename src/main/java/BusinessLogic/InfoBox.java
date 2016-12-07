@@ -21,6 +21,15 @@ public class InfoBox {
         info.setAlignment(Pos.CENTER);
         info.setMinWidth(200);
         dialogStage.setScene(new Scene(info));
+        ok.setOnKeyPressed(
+                onEnter -> { switch (onEnter.getCode()) {
+                    case ENTER:
+                        dialogStage.close();
+                    }
+                }
+        );
         dialogStage.showAndWait();
+
+
     }
 }
