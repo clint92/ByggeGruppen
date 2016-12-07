@@ -10,6 +10,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,38 +19,35 @@ public class AdminController extends Controller implements Initializable {
 
     //CreateUser!
     Admin newU = new Admin();
-    public TextField usernameboks;
-    public TextField passwordboks;
-    public TextField firstname;
-    public TextField lastname;
-    public TextField address;
-    public TextField zip;
-    public TextField email;
-    public TextField number;
+    private TextField usernameboks;
+    private TextField passwordboks;
+    private TextField firstname;
+    private TextField lastname;
+    private TextField address;
+    private TextField zip;
+    private TextField email;
+    private TextField number;
     //CreateProjekt!
-    public TextField cpName;
-    public TextField cpAddress;
-    public TextField cpZip;
-    public DatePicker cpStartDate;
-    public DatePicker cpEndDate;
-    public TextField cpPrice;
-    public TextArea cpDescription;
-
+    private TextField cpName;
+    private TextField cpAddress;
+    private TextField cpZip;
+    private DatePicker cpStartDate;
+    private DatePicker cpEndDate;
+    private TextField cpPrice;
+    private TextArea cpDescription;
 
     @FXML
-    public ComboBox<String> usertype;
-    ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor", "Admin");
+    private ComboBox<String> usertype;
+    private ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor", "Admin");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usertype.setItems(types);
-        cb.setItems(mp.getAllProjects());
+        cb.setItems(op.getAllProjects());
         cb.setOnAction(e -> {
-            infoText.setText(mp.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
-            mp.setProjectName(cb.getSelectionModel().getSelectedItem().toString());
+            infoText.setText(op.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
+            MyProject.setMyProjectName(cb.getSelectionModel().getSelectedItem().toString());
         });
-        cpStartDate.setConverter(mc.convertDate());
-        cpEndDate.setConverter(mc.convertDate());
     }
 
     public void createProfile() {
@@ -81,22 +79,22 @@ public class AdminController extends Controller implements Initializable {
 
     public void createNewProject() {
         try {
-            if (cpName.getText().equals("") || cpAddress.getText().equals("") || cpZip.getText().equals("")
-                    || cpStartDate.getEditor().getText().equals("") || cpEndDate.getEditor().getText().equals("") || cpPrice.getText().equals("") ||
-                    cpDescription.getText().equals("")) {
+            if (cpName.getText().equals("") || cpAddress.getText().equals("") || cpZip.getText().length() <= 4
+                    || cpDescription.getText().equals("") || cpStartDate.getEditor().getText().equals("") || cpEndDate.getEditor().getText().equals("")
+                    || cpPrice.getText().equals("")) {
                 throw new EmptyFieldException();
             } else {
                 newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()), cpDescription.getText(),
                         cpStartDate.getEditor().getText(), cpEndDate.getEditor().getText(), Double.parseDouble(cpPrice.getText()));
-                InfoBox.info("New project created!");
-                cb.setItems(mp.getAllProjects());
-
+                cb.setItems(op.getAllProjects());
             }
         } catch (EmptyFieldException e) {
-
+            e.printStackTrace();
         }
     }
 
+
+    //NÅR VI TRYKKER ENTER
     public void onEnterAdminProjects(KeyEvent keyEvent) {
         if (keyEvent.getCode().toString().equals("ENTER")) openProject();
 

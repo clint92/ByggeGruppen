@@ -3,35 +3,15 @@ package BusinessLogic;
 import Database.MyDatabase;
 import javafx.scene.control.Alert;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class User {
-    Security sc = new Security();
+    MyDatabase db = MyDatabase.dbInstance();
     private static String username;
     private static String level;
-    MyDatabase db = MyDatabase.dbInstance();
+    private Message msg;
 
-    public void addToTimeline(String pjName, String message, String userN) {
-        String msg = message;
-        int count = 0;
-        if (msg.length() > 50) {
-            msg = "";
-            for (int i = 0; i < message.length(); i++) {
-                if (count != 50) {
-                    msg += message.substring(i, i + 1);
-                } else {
-                    msg += "\n";
-                    count = 0;
-                }
-                count++;
-            }
-        }
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
-
-        db.updateDB("INSERT INTO Timeline values('" + pjName + "','" + dateFormat.format(date) + "', '" + msg + "',  null ,'" + userN + "');");
+    public void addToTimeline(String message) {
+        msg = new Message(MyProject.getMyProjectName(), MyCalender.currentDate(), message, username);
+        msg.send();
     }
 
     public void changeContent() {
@@ -49,7 +29,7 @@ public class User {
             alert.setHeaderText("Succes!");
             alert.setContentText("Password changed");
             alert.showAndWait();
-            db.updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
+            db.updateDB("UPDATE Users SET password='" + Security.hashpw(pass1) + "' WHERE userName='" + userN + "';");
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("System message");

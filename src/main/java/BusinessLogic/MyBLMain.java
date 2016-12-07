@@ -6,13 +6,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MyBLMain {
-
-    Security sc = new Security();
-
     public int validate(String user, String pass){
-        return Login.handleLogin(user, sc.hashpw(pass));
+        Login login = new Login(user, Security.hashpw(pass));
+        return login.handleLogin();
     }
-
     public void setScene(Stage oStage, String path) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(path));

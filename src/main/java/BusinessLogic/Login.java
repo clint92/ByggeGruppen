@@ -7,7 +7,14 @@ import java.sql.SQLException;
 
 public class Login {
 
-    public static int handleLogin(String user, String pass) {
+    private String user;
+    private String pass;
+
+    public Login(String user, String pass) {
+        this.user = user;
+        this.pass = pass;
+    }
+    public int handleLogin() {
         try {
             ResultSet data = MyDatabase.dbInstance().query("SELECT * FROM Users");
             while (data.next()) {
