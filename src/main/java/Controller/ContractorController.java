@@ -9,10 +9,10 @@ public class ContractorController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cb.setItems(mp.getProjects());
+        cb.setItems(op.getProjects());
         cb.setOnAction(e -> {
-            infoText.setText(mp.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
-            mp.setProjectName(cb.getSelectionModel().getSelectedItem().toString());
+            infoText.setText(op.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
+            op.setMyProjectName(cb.getSelectionModel().getSelectedItem().toString());
         });
     }
 }

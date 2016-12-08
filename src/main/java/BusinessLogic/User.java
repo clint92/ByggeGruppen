@@ -3,45 +3,38 @@ package BusinessLogic;
 import Database.MyDatabase;
 import javafx.scene.control.Alert;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class User {
-    Security sc = new Security();
+    MyDatabase db = MyDatabase.dbInstance();
     private static String username;
     private static String level;
-    MyDatabase db = MyDatabase.dbInstance();
+    //Users <- database
+    private String userN;
+    private String passW;
+    private int lvl;
+    //UserInfomation
+    private UserInformation u;
 
-    public void addToTimeline(String pjName, String message, String userN) {
-        String msg = message;
-        int count = 0;
-        if (msg.length() > 50) {
-            msg = "";
-            for (int i = 0; i < message.length(); i++) {
-                if (count != 50) {
-                    msg += message.substring(i, i + 1);
-                } else {
-                    msg += "\n";
-                    count = 0;
-                }
-                count++;
-            }
+    public User(){
+
+    }
+    public User(String userN, String passW){
+        this.userN = userN;
+        this.passW = Security.hashpw(passW);
+    }
+    public User(String userN, String passW, int lvl, UserInformation u) {
+        this.userN = userN;
+        this.passW = passW;
+        this.lvl = lvl;
+        this.u = u;
+    }
+    public void addToTimeline(Message message) {
+        if(message.getDescription().length() <= 0){
+            InfoBox.info("Skriv venligst noget!");
+        }else {
+            db.updateDB("INSERT INTO Timeline values("+ message +");");
+            InfoBox.info("Sendt!");
         }
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
-
-        db.updateDB("INSERT INTO Timeline values('" + pjName + "','" + dateFormat.format(date) + "', '" + msg + "',  null ,'" + userN + "');");
     }
-
-    public void changeContent() {
-
-    }
-
-    public void deleteContent() {
-
-    }
-
     public void changeLogin(String userN, String pass1, String pass2) {
         if (pass1.equals(pass2)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -49,7 +42,7 @@ public class User {
             alert.setHeaderText("Succes!");
             alert.setContentText("Password changed");
             alert.showAndWait();
-            db.updateDB("UPDATE Users SET password='" + sc.hashpw(pass1) + "' WHERE userName='" + userN + "';");
+            db.updateDB("UPDATE Users SET password='" + Security.hashpw(pass1) + "' WHERE userName='" + userN + "';");
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("System message");
@@ -59,19 +52,35 @@ public class User {
         }
     }
 
-    public static String getUsername() {
+    //statisk for at gemme brugernavn igennem nye fxml??
+    public static String getOwnUsername() {
         return username;
     }
-
-    public static void setUsername(String username) {
+    public static void setOwnUsername(String username) {
         User.username = username;
     }
-
     public static String getLevel() {
         return level;
     }
-
     public static void setLevel(String level) {
         User.level = level;
+    }
+
+    public String getUserN(){
+        return this.userN;
+    }
+    public String getPassW(){
+        return this.passW;
+    }
+    public int getLvl(){
+        return this.lvl;
+    }
+
+    public UserInformation getUserInformation(){
+        return this.u;
+    }
+
+    public String toString(){
+        return "user_ID, '" + userN + "', '" + passW + "'," + lvl;
     }
 }

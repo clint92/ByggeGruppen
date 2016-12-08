@@ -10,6 +10,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,45 +19,66 @@ public class AdminController extends Controller implements Initializable {
 
     //CreateUser!
     Admin newU = new Admin();
-    public TextField usernameboks;
-    public TextField passwordboks;
-    public TextField firstname;
-    public TextField lastname;
-    public TextField address;
-    public TextField zip;
-    public TextField email;
-    public TextField number;
+    @FXML
+    private TextField usernameboks;
+    @FXML
+    private TextField passwordboks;
+    @FXML
+    private TextField firstname;
+    @FXML
+    private TextField lastname;
+    @FXML
+    private TextField address;
+    @FXML
+    private TextField zip;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField number;
     //CreateProjekt!
-    public TextField cpName;
-    public TextField cpAddress;
-    public TextField cpZip;
-    public DatePicker cpStartDate;
-    public DatePicker cpEndDate;
-    public TextField cpPrice;
-    public TextArea cpDescription;
-
+    @FXML
+    private TextField cpName;
+    @FXML
+    private TextField cpAddress;
+    @FXML
+    private TextField cpZip;
+    @FXML
+    private DatePicker cpStartDate;
+    @FXML
+    private DatePicker cpEndDate;
+    @FXML
+    private TextField cpPrice;
+    @FXML
+    private TextArea cpDescription;
 
     @FXML
-    public ComboBox<String> usertype;
-    ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor", "Admin");
+    private ComboBox<String> usertype;
+    private ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor", "Admin");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usertype.setItems(types);
-        cb.setItems(mp.getAllProjects());
+        cb.setItems(op.getAllProjects());
         cb.setOnAction(e -> {
-            infoText.setText(mp.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
-            mp.setProjectName(cb.getSelectionModel().getSelectedItem().toString());
+            infoText.setText(op.projectInformation(cb.getSelectionModel().getSelectedItem().toString()));
+            MyProject.setMyProjectName(cb.getSelectionModel().getSelectedItem().toString());
         });
-        cpStartDate.setConverter(mc.convertDate());
-        cpEndDate.setConverter(mc.convertDate());
     }
 
     public void createProfile() {
+        String userN = usernameboks.getText();
+        String passW = passwordboks.getText();
+        String fName = firstname.getText();
+        String lName = lastname.getText();
+        String street = address.getText();
+        String postcode = zip.getText();
+        String mail = email.getText();
+        String mobil = number.getText();
         int level = -1;
+
         try {
             if (usertype.getValue() != null) {
-                String type = usertype.getSelectionModel().getSelectedItem().toString();
+                String type = usertype.getSelectionModel().getSelectedItem();
                 if (type.equals("Client")) {
                     level = 2;
                 } else if (type.equals("Contractor")) {
@@ -67,12 +89,11 @@ public class AdminController extends Controller implements Initializable {
             } else {
                 throw new EmptyFieldException();
             }
-            if (usernameboks.getText().equals("") || passwordboks.getText().equals("") || level == -1 || firstname.getText().equals("") || lastname.getText().equals("") || address.getText().equals("") || zip.getText().equals("") || email.getText().equals("") || number.getText().equals("")) {
-                System.out.println("fejl");
+            if (userN.isEmpty() || passW.isEmpty() || level == -1 || fName.isEmpty() || lName.isEmpty() || street.isEmpty() || postcode.isEmpty() || mail.isEmpty() || mobil.isEmpty()) {
                 throw new EmptyFieldException();
             } else {
-                newU.addProfile(usernameboks.getText(), passwordboks.getText(), level, firstname.getText(), lastname.getText(), address.getText(), Integer.parseInt(zip.getText()), email.getText(), Integer.parseInt(number.getText()));
-                System.out.println(firstname.getText());
+                newU.addProfile(new User(userN, passW, level, new UserInformation(fName, lName, street, Integer.parseInt(postcode), mail, Integer.parseInt(mobil))));
+
             }
         } catch (EmptyFieldException e) {
             e.printStackTrace();
@@ -80,23 +101,28 @@ public class AdminController extends Controller implements Initializable {
     }
 
     public void createNewProject() {
+        String name = cpName.getText();
+        String address = cpAddress.getText();
+        String zip = cpZip.getText();
+        String description = cpDescription.getText();
+        String sDate = cpStartDate.getEditor().getText();
+        String eDate = cpEndDate.getEditor().getText();
+        String price = cpPrice.getText();
+
         try {
-            if (cpName.getText().equals("") || cpAddress.getText().equals("") || cpZip.getText().equals("")
-                    || cpStartDate.getEditor().getText().equals("") || cpEndDate.getEditor().getText().equals("") || cpPrice.getText().equals("") ||
-                    cpDescription.getText().equals("")) {
+            if (name.isEmpty() || address.isEmpty() || zip.length() >= 5 || description.isEmpty() || sDate.isEmpty() || eDate.isEmpty() || price.isEmpty()) {
                 throw new EmptyFieldException();
             } else {
-                newU.createProject(cpName.getText(), cpAddress.getText(), Integer.parseInt(cpZip.getText()), cpDescription.getText(),
-                        cpStartDate.getEditor().getText(), cpEndDate.getEditor().getText(), Double.parseDouble(cpPrice.getText()));
-                InfoBox.info("New project created!");
-                cb.setItems(mp.getAllProjects());
-
+                newU.createProject(new MyProject(name, address, Integer.parseInt(zip), description, sDate, eDate, Double.parseDouble(price)));
+                cb.setItems(op.getAllProjects());
             }
         } catch (EmptyFieldException e) {
-
+            e.printStackTrace();
         }
     }
 
+
+    //NÅR VI TRYKKER ENTER
     public void onEnterAdminProjects(KeyEvent keyEvent) {
         if (keyEvent.getCode().toString().equals("ENTER")) openProject();
 

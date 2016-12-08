@@ -14,11 +14,10 @@ public class Admin extends User {
     public void finishProject() {
 
     }
-
-    public void createProject(String pName, String pAdress, int pZip, String pDescription, String pStartDate, String pEndDate, double pPrice) {
-        db.updateDB("INSERT INTO Projects values('"+ pName +"','"+pAdress+"',"+pZip+",'"+pDescription+"','"+pStartDate+"','"+pEndDate+"',"+pPrice+")");
+    public void createProject(MyProject project) {
+        db.updateDB("INSERT INTO Projects values(" + project + ")");
+        InfoBox.info("New project created!");
     }
-
     public void changeProject() {
 
     }
@@ -28,16 +27,13 @@ public class Admin extends User {
     public void sendToArchive() {
 
     }
-
     public void addToCalender() {
 
     }
 
-    public void addProfile(String username, String password, int level, String firstName, String lastName, String address, int zip, String email, int number ) throws EmptyFieldException {
-
-                db.updateDB("INSERT INTO Users(user_ID, userName, password, level)" + "values(user_ID,'" + username + "'," + "'" + sc.hashpw(password) + "'," + level + ");");
-                db.updateDB("INSERT INTO UserInformation(UsersUserID, Name, LastName, Address, Zip, Email, MobilNr)" +
-                        "values( LAST_INSERT_ID() " + ",'" + firstName + "','" + lastName + "','" + address + "'," + zip + ",'" + email + "'," + number + ");");
+    public void addProfile(User user) throws EmptyFieldException {
+                db.updateDB("INSERT INTO Users values(" + user + ");");
+                db.updateDB("INSERT INTO UserInformation values(" + user.getUserInformation() +");");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("System message");
                 alert.setHeaderText("Succes!");
@@ -83,12 +79,12 @@ public class Admin extends User {
 
     public void addUserToProject(String user)
     {
-        ResultSet userName = MyDatabase.dbInstance().query("SELECT userName FROM Users WHERE User_ID = " + user + ";");
+        ResultSet userName = db.dbInstance().query("SELECT userName FROM Users WHERE User_ID = " + user + ";");
         try {
             while (userName.next()) {
                 String name = userName.getString("userName");
 
-                MyDatabase.dbInstance().updateDB("INSERT INTO UserProjectRelation values(RelationID," + user + ",'" + MyProject.projectInstance().getProjectName() + "', '" + name +"');");
+                db.updateDB("INSERT INTO UserProjectRelation values(RelationID," + user + ",'" + MyProject.getMyProjectName() + "', '" + name +"');");
             }
         }
             catch(SQLException e)
@@ -101,6 +97,4 @@ public class Admin extends User {
     public void getProjectFromArchive() {
 
     }
-
-
 }
