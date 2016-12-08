@@ -3,7 +3,7 @@ package BusinessLogic;
 import Database.MyDatabase;
 import javafx.scene.control.Alert;
 
-public class User {
+public class User implements UserInterface{
     MyDatabase db = MyDatabase.dbInstance();
     private static String username;
     private static String level;

@@ -17,10 +17,9 @@ import java.util.ResourceBundle;
 /**
  * Created by clint on 06-12-2016.
  */
-public class ProjectAddUser extends ProjektInitialize{
+public class ProjectAddUser extends ProjectInitialize{
     Admin a = new Admin();
-    public ProjectAddUser(ComboBox<String> addUser,ObservableList<String> types)
-    {
+    public ProjectAddUser(ComboBox<String> addUser,ObservableList<String> types) {
         this.addUser = addUser;
         this.types = types;
     }

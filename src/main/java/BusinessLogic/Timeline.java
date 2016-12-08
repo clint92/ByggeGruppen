@@ -10,29 +10,33 @@ import java.sql.SQLException;
 
 public class Timeline {
     MyDatabase db = MyDatabase.dbInstance();
+    private String timelineID;
+    private String DateAndTime;
+    private String Description;
+    private String picture = "null";
+    private String firstName;
 
-    public void setTimeline() {
+    public Timeline(){
 
     }
-
+    public Timeline(String dateAndTime, String description, String firstName) {
+        DateAndTime = dateAndTime;
+        Description = description;
+        this.firstName = firstName;
+    }
     public VBox getTimeline(String projectName) {
         ResultSet rs = db.query("SELECT * FROM Timeline where timelineID='" + projectName + "';");
         VBox vb = new VBox();
         try {
             while (rs.next()) {
-                vb.getChildren().add(new Text(rs.getString("DateAndTime") + "\n" + "From: " + rs.getString("firstName") + "\n" + rs.getString("Description") + "\n\n"));
+                vb.getChildren().add(new Text(new Timeline(rs.getString("DateAndTime"), rs.getString("firstName"), rs.getString("Description")).toString()));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return vb;
     }
-
-    public void uploadPicture() {
-
-    }
-
-    public void deleteFromTimelint() {
-
+    public String toString(){
+        return DateAndTime + "\n" + "From: " + firstName + "\n" + Description+"\n\n";
     }
 }

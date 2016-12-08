@@ -5,7 +5,6 @@ import BusinessLogic.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
@@ -24,15 +23,19 @@ public class Controller {
     @FXML
     private PasswordField pass;
     //////////////////////////////////////// Admin, Client, Contractor filerne.
-    public TextField pass1;
-    public TextField pass2;
-
-    public TextField textfield;
+    //CHANGELOGIN FIELDS//
+    @FXML
+    private TextField pass1;
+    @FXML
+    private TextField pass2;
+    //PROJEKT SEND MESSAGE FIELD
+    @FXML
+    private TextField textfield;
     public ScrollPane timeline;
-
-    public AnchorPane pjMain;
+    //PROJEKT TAB
     public TextArea infoText;
     public ComboBox cb;
+
 
     //BLMAIN
     public void userLogin() {
@@ -58,17 +61,18 @@ public class Controller {
                 break;
         }
     }
-
+    //ADMINCONTROLLER
     public void userChangeLogin() {
         u.changeLogin(u.getOwnUsername(), pass1.getText(), pass2.getText());
     }
+    //USERCLASS
     public void sendMessage() {
         String message = textfield.getText();
-
         u.addToTimeline(new Message(projectName, calendarDate, message, User.getOwnUsername()));
         timeline.setContent(TL.getTimeline(projectName));
         textfield.setText("");
     }
+    //BLMAIN OG HER
     public void openProject() {
         if (cb.getValue() == null) {
             InfoBox.info("Vælg et projekt!");
@@ -76,11 +80,11 @@ public class Controller {
             BL.setScene((Stage) pass1.getScene().getWindow(), "../Project.fxml");
         }
     }
+    //HER
     public void pjBack(){
         BL.setScene((Stage)timeline.getScene().getWindow(), "../"+ User.getLevel() + ".fxml");
     }
-
-
+    //HER
     public void onEnterLogin(KeyEvent keyEvent) {
         if (keyEvent.getCode().toString().equals("ENTER")) {
             userLogin();

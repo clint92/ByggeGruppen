@@ -10,7 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by Julius on 07-12-2016.
  */
-public class MyProject implements ProjectInterface {
+public class MyProject implements MyProjectInterface {
     private static String myProjectName;
 
     private String projectName;

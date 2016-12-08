@@ -14,7 +14,7 @@ import java.util.Date;
 import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 
-public class MyCalender {
+public class MyCalender implements MyCalenderInterFace{
     public VBox getProjectDate(String date) {
         VBox vb = new VBox();
         System.out.println(date);
