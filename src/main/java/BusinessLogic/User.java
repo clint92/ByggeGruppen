@@ -23,7 +23,7 @@ public class User implements UserInterface{
     }
     public User(String userN, String passW, int lvl, UserInformation u) {
         this.userN = userN;
-        this.passW = passW;
+        this.passW = Security.hashpw(passW);
         this.lvl = lvl;
         this.u = u;
     }
