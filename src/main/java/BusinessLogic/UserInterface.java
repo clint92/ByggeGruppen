@@ -6,4 +6,5 @@ package BusinessLogic;
 public interface UserInterface {
     void addToTimeline(Message message);
     void changeLogin(String userN, String pass1, String pass2);
+    String toString();
 }

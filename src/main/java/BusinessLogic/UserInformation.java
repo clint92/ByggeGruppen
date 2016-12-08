@@ -3,7 +3,7 @@ package BusinessLogic;
 /**
  * Created by Julius on 08-12-2016.
  */
-public class UserInformation {
+public class UserInformation implements UserInformationInterface{
     //UserInfomation
     private String name;
     private String lName;

@@ -8,7 +8,7 @@ import javafx.scene.text.Text;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Timeline {
+public class Timeline implements TimelineInterface{
     MyDatabase db = MyDatabase.dbInstance();
     private String timelineID;
     private String DateAndTime;

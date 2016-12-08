@@ -17,7 +17,6 @@ import javafx.util.StringConverter;
 public class MyCalender implements MyCalenderInterFace{
     public VBox getProjectDate(String date) {
         VBox vb = new VBox();
-        System.out.println(date);
         ResultSet rs = MyDatabase.dbInstance().query("SELECT  * FROM Timeline where timelineID='" + MyProject.getMyProjectName() + "'");
 
         try {
