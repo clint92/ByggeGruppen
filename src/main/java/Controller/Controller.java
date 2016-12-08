@@ -3,9 +3,15 @@ package Controller;
 import BusinessLogic.*;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 
 public class Controller {
@@ -89,5 +95,15 @@ public class Controller {
         if (keyEvent.getCode().toString().equals("ENTER")) {
             userLogin();
         }
+    }
+
+    public void logOut() throws IOException {
+        Stage st = (Stage)pass1.getScene().getWindow();
+        st.close();
+        Parent root = FXMLLoader.load(getClass().getResource("/Controller.fxml"));
+        st.setTitle("Byggegruppen KBH");
+        st.setOnCloseRequest(e -> st.close());
+        st.setScene(new Scene(root));
+        st.show();
     }
 }

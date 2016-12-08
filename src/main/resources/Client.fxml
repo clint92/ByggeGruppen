@@ -24,7 +24,7 @@
       </Tab>
       <Tab text="Change login">
          <content>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="logout" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="pass1" layoutX="192.0" layoutY="108.0" />
                   <TextField fx:id="pass2" layoutX="192.0" layoutY="173.0" />
@@ -33,6 +33,11 @@
                </children>
             </AnchorPane>
          </content>
+      </Tab>
+      <Tab fx:id="logout" onSelectionChanged="#logOut" text="Log out">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
       </Tab>
    </tabs>
 </TabPane>
