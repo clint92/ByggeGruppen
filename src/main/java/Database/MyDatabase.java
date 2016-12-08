@@ -1,5 +1,8 @@
 package Database;
 
+import BusinessLogic.InfoBox;
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
+
 import java.sql.*;
 
 public class MyDatabase implements Database {
@@ -34,8 +37,9 @@ public class MyDatabase implements Database {
             data = statement.executeQuery(query);
         }
         catch(SQLException e){
-            e.printStackTrace();
-        }
+                e.printStackTrace();
+            }
+
         return data;
     }
 
@@ -45,7 +49,12 @@ public class MyDatabase implements Database {
             statement.executeUpdate(query);
         }
         catch(SQLException e){
-            e.printStackTrace();
+            if(e instanceof com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException){
+                InfoBox.info("Duplicate");
+            }
+            else {
+                e.printStackTrace();
+            }
         }
     }
 
