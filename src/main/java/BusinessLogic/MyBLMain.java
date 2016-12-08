@@ -6,8 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MyBLMain {
-    public int validate(String user, String pass){
-        Login login = new Login(user, Security.hashpw(pass));
+    public int validate(User u){
+        Login login = new Login(u);
         return login.handleLogin();
     }
     public void setScene(Stage oStage, String path) {

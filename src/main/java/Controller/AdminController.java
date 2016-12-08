@@ -92,7 +92,7 @@ public class AdminController extends Controller implements Initializable {
             if (userN.isEmpty() || passW.isEmpty() || level == -1 || fName.isEmpty() || lName.isEmpty() || street.isEmpty() || postcode.isEmpty() || mail.isEmpty() || mobil.isEmpty()) {
                 throw new EmptyFieldException();
             } else {
-                newU.addProfile(new User(userN, passW, level, fName, lName, street, Integer.parseInt(postcode), mail, Integer.parseInt(mobil)));
+                newU.addProfile(new User(userN, passW, level, new UserInformation(fName, lName, street, Integer.parseInt(postcode), mail, Integer.parseInt(mobil))));
 
             }
         } catch (EmptyFieldException e) {
@@ -108,6 +108,7 @@ public class AdminController extends Controller implements Initializable {
         String sDate = cpStartDate.getEditor().getText();
         String eDate = cpEndDate.getEditor().getText();
         String price = cpPrice.getText();
+
         try {
             if (name.isEmpty() || address.isEmpty() || zip.length() >= 5 || description.isEmpty() || sDate.isEmpty() || eDate.isEmpty() || price.isEmpty()) {
                 throw new EmptyFieldException();

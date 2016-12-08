@@ -16,6 +16,8 @@ public class Controller {
     Timeline TL = new Timeline();
     MyProject op = new MyProject();
     MyCalender mc = new MyCalender();
+    private String projectName = MyProject.getMyProjectName();
+    private String calendarDate = MyCalender.currentDate();
     //////////////////////////////////////LOGIN
     @FXML
     private TextField user;
@@ -32,9 +34,10 @@ public class Controller {
     public TextArea infoText;
     public ComboBox cb;
 
+    //BLMAIN
     public void userLogin() {
-        u.setUsername(user.getText());
-        switch (BL.validate(user.getText(), pass.getText())) {
+        u.setOwnUsername(user.getText());
+        switch (BL.validate(new User(user.getText(), pass.getText()))) {
             case -1:
                 InfoBox.info("Wrong Password or Username!");
                 break;
@@ -55,12 +58,15 @@ public class Controller {
                 break;
         }
     }
+
     public void userChangeLogin() {
-        u.changeLogin(u.getUsername(), pass1.getText(), pass2.getText());
+        u.changeLogin(u.getOwnUsername(), pass1.getText(), pass2.getText());
     }
     public void sendMessage() {
-        u.addToTimeline(new Message(MyProject.getMyProjectName(), MyCalender.currentDate(), textfield.getText(), User.getUsername()));
-        timeline.setContent(TL.getTimeline(MyProject.getMyProjectName()));
+        String message = textfield.getText();
+
+        u.addToTimeline(new Message(projectName, calendarDate, message, User.getOwnUsername()));
+        timeline.setContent(TL.getTimeline(projectName));
         textfield.setText("");
     }
     public void openProject() {

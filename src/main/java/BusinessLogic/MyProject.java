@@ -57,7 +57,7 @@ public class MyProject implements ProjectInterface {
         return info;
     }
     public ObservableList<String> getProjects(){
-        ResultSet rs = db.query("SELECT projectName FROM UserProjectRelation where UserName='" + User.getUsername() + "';");
+        ResultSet rs = db.query("SELECT projectName FROM UserProjectRelation where UserName='" + User.getOwnUsername() + "';");
         ObservableList<String> options = FXCollections.observableArrayList();
         try {
             while (rs.next()) {
@@ -83,6 +83,6 @@ public class MyProject implements ProjectInterface {
         return options;
     }
     public String toString(){
-        return "'" + projectName + "','" + address + "'," + zip + ",'" + description + "','" + startDate + "','" + endDate + "'," + price;
+        return "' " + projectName + " ',' " + address + " '," + zip + ", '" + description + " ',' " + startDate + " ',' " + endDate + " ', " + price;
     }
 }

@@ -12,26 +12,20 @@ public class User {
     private String passW;
     private int lvl;
     //UserInfomation
-    private String name;
-    private String lName;
-    private String address;
-    private int zip;
-    private String email;
-    private int mobil;
+    private UserInformation u;
 
     public User(){
 
     }
-    public User(String userN, String passW, int lvl, String name, String lName, String address, int zip, String email, int mobil) {
+    public User(String userN, String passW){
+        this.userN = userN;
+        this.passW = Security.hashpw(passW);
+    }
+    public User(String userN, String passW, int lvl, UserInformation u) {
         this.userN = userN;
         this.passW = passW;
         this.lvl = lvl;
-        this.name = name;
-        this.lName = lName;
-        this.address = address;
-        this.zip = zip;
-        this.email = email;
-        this.mobil = mobil;
+        this.u = u;
     }
     public void addToTimeline(Message message) {
         if(message.getDescription().length() <= 0){
@@ -41,15 +35,6 @@ public class User {
             InfoBox.info("Sendt!");
         }
     }
-
-    public void changeContent() {
-
-    }
-
-    public void deleteContent() {
-
-    }
-
     public void changeLogin(String userN, String pass1, String pass2) {
         if (pass1.equals(pass2)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -67,27 +52,35 @@ public class User {
         }
     }
 
-    public static String getUsername() {
+    //statisk for at gemme brugernavn igennem nye fxml??
+    public static String getOwnUsername() {
         return username;
     }
-
-    public static void setUsername(String username) {
+    public static void setOwnUsername(String username) {
         User.username = username;
     }
-
     public static String getLevel() {
         return level;
     }
-
     public static void setLevel(String level) {
         User.level = level;
     }
 
-    public String Information(){
-        return "LAST_INSERT_ID(), '" + name + "', '"+ lName + "', '"+ address+"', " + zip+ ", '"+ email +"', " + mobil;
-
+    public String getUserN(){
+        return this.userN;
     }
+    public String getPassW(){
+        return this.passW;
+    }
+    public int getLvl(){
+        return this.lvl;
+    }
+
+    public UserInformation getUserInformation(){
+        return this.u;
+    }
+
     public String toString(){
-        return "user_ID, '" + userN + "', '" + Security.hashpw(passW) + "'," + lvl;
+        return "user_ID, '" + userN + "', '" + passW + "'," + lvl;
     }
 }

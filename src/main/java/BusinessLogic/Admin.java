@@ -33,7 +33,7 @@ public class Admin extends User {
 
     public void addProfile(User user) throws EmptyFieldException {
                 db.updateDB("INSERT INTO Users values(" + user + ");");
-                db.updateDB("INSERT INTO UserInformation values(" + user.Information() +");");
+                db.updateDB("INSERT INTO UserInformation values(" + user.getUserInformation() +");");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("System message");
                 alert.setHeaderText("Succes!");
@@ -79,12 +79,12 @@ public class Admin extends User {
 
     public void addUserToProject(String user)
     {
-        ResultSet userName = MyDatabase.dbInstance().query("SELECT userName FROM Users WHERE User_ID = " + user + ";");
+        ResultSet userName = db.dbInstance().query("SELECT userName FROM Users WHERE User_ID = " + user + ";");
         try {
             while (userName.next()) {
                 String name = userName.getString("userName");
 
-                MyDatabase.dbInstance().updateDB("INSERT INTO UserProjectRelation values(RelationID," + user + ",'" + MyProject.getMyProjectName() + "', '" + name +"');");
+                db.updateDB("INSERT INTO UserProjectRelation values(RelationID," + user + ",'" + MyProject.getMyProjectName() + "', '" + name +"');");
             }
         }
             catch(SQLException e)
