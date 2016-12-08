@@ -35,6 +35,7 @@ public class ProjectAddUser extends ProjectInitialize{
     public void createOkBox(String userT){
         Stage cuStage = new Stage();
         ComboBox cb = new ComboBox();
+        cb.setPromptText("Choose user");
         cb.setItems(a.findUsersForProject(userT));
         cuStage.initModality(Modality.APPLICATION_MODAL);
         Button ok = new Button("OK");

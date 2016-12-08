@@ -31,7 +31,7 @@ public class Admin extends User {
 
     }
 
-    public void addProfile(User user) throws EmptyFieldException {
+    public void addProfile(User user)  {
                 db.updateDB("INSERT INTO Users values(" + user + ");");
                 db.updateDB("INSERT INTO UserInformation values(" + user.getUserInformation() +");");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
