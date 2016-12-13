@@ -37,6 +37,6 @@ public class Timeline implements TimelineInterface{
         return vb;
     }
     public String toString(){
-        return DateAndTime + "\n" + "From: " + firstName + "\n" + Description+"\n\n";
+        return DateAndTime + "\n" + "From: " + firstName + "\n" + Description+"\n\n" ;
     }
 }
