@@ -2,6 +2,8 @@ package BusinessLogic;
 
 import Database.MyDatabase;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.util.StringConverter;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,9 +12,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-
-import javafx.scene.text.Text;
-import javafx.util.StringConverter;
 
 public class MyCalender implements MyCalenderInterFace{
     public VBox getProjectDate(String date) {
@@ -42,7 +41,7 @@ public class MyCalender implements MyCalenderInterFace{
     }
     //i tilfælde af vi vil have en anderledes date.
     public StringConverter<LocalDate> convertDate() {
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         StringConverter<LocalDate> lc = new StringConverter<LocalDate>() {
             @Override
             public String toString(LocalDate date) {

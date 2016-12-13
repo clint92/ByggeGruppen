@@ -1,10 +1,8 @@
 package Controller;
 
 import BusinessLogic.*;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -42,6 +40,10 @@ public class Controller {
     public TextArea infoText;
     public ComboBox cb;
 
+    public Button refreshConv;
+    public Button addnote;
+    public DatePicker calender;
+    public TextField notetodate;
 
     //BLMAIN
     public void userLogin() {
@@ -77,6 +79,14 @@ public class Controller {
         u.addToTimeline(new Message(projectName, calendarDate, message, User.getOwnUsername()));
         timeline.setContent(TL.getTimeline(projectName));
         textfield.setText("");
+    }
+
+    public void addToDate() {
+        String date = calender.getEditor().getText();
+        String message = notetodate.getText();
+        System.out.println(date + message + projectName);
+        u.addToTimeline(new Message(projectName, date, message, User.getOwnUsername()));
+        notetodate.setText("");
     }
     //BLMAIN OG HER
     public void openProject() {

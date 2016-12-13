@@ -1,11 +1,10 @@
 package Controller;
 
+import BusinessLogic.MyProject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import BusinessLogic.*;
-import javafx.scene.control.DatePicker;
 import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
@@ -15,7 +14,7 @@ public class ProjectInitialize extends Controller implements Initializable {
     public ProjectAddUser e;
     public ComboBox<String> addUser;
     public ObservableList<String> types = FXCollections.observableArrayList("Client", "Contractor");
-    public DatePicker calender;
+    //public DatePicker calender;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -26,7 +25,9 @@ public class ProjectInitialize extends Controller implements Initializable {
         if(u.getLevel() == "Admin"){
             addUser.setVisible(true);
         }
+        refreshConv.setOnAction(e-> timeline.setContent(TL.getTimeline(MyProject.getMyProjectName())));
         calender.setOnAction(e -> timeline.setContent(mc.getProjectDate(calender.getEditor().getText())));
+        calender.setConverter(mc.convertDate());
     }
 
     public void getProjectDate(){

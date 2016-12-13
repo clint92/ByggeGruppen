@@ -2,7 +2,7 @@ package Database;
 
 
 public interface Backup {
-    void makeBackup();
+    //void makeBackup();
 
-    void getBackup();
+    //void getBackup();
 }
