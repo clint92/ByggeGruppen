@@ -16,7 +16,7 @@ public class Login implements LoginInterface {
         String userName = u.getUserN();
         String hashedPassword = u.getPassW();
         try {
-            ResultSet data = db.query("SELECT * FROM Users");
+            ResultSet data = db.query("SELECT * FROM Users where userName='"+ userName + "");
             while (data.next()) {
                 if (data.getString("userName").equals(userName) && data.getString("password").equals(hashedPassword)) {
                     int level = data.getInt("level");
